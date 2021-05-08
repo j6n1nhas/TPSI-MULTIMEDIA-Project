@@ -1,0 +1,48 @@
+main
+{
+    padding: 20px 50px 0 50px;
+}
+form
+{
+    display: flex;
+    flex-direction: column;
+    border: 5px solid #0946ee86;
+    border-radius: 10px;
+    margin: 20px 30px 50px 30px;
+    padding: 10px 10px 20px 10px;
+}
+form input:invalid
+{
+    box-shadow: 0 0 5px 1px red;
+}
+#form_div
+{
+    display: flex;
+    justify-content: space-around;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 10px 10px;
+}
+form>button
+{
+    margin: 0 100px 0 100px;
+}
+fieldset
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 20px;
+}
+fieldset input
+{
+    margin-bottom: 15px;
+}
+dt
+{
+    margin: 10px;
+}
+dd
+{
+    margin: 20px;
+}

@@ -43,12 +43,12 @@ ul.menu
     top: 45px;
     left: 0;
     padding: 0px;
-    width: 200px;
+    width: 180px;
     border-radius: 5px;
 }
 .menu ul.submenu-1 a
 {
-    width: 160px;
+    width: 180px;
     padding: 0 20px;
     border-radius: 5px;
 }

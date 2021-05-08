@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/menus.css">
+    <link rel="stylesheet" type="text/css" href="css/reservas.css">
+    <title>Restaurante</title>
+</head>
+<body>
+    <header>
+        <h1 style="text-align: center;"><a href="index.html" style="text-decoration: none;">RESTAURANTE</a></h1>
+    </header>
+    <!-- Navegador do site -->
+    <nav class="navegador">
+        <ul class="menu">
+            <li><a href="#">Pratos</a>
+                <ul class="submenu-1">
+                    <li><a href="pratos.html">O ABC dos pitéus</a>
+                    <li><a href="diarias.html">Menus diários</a></li>
+                    <li><a href="especialidades.html">Especialidades</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Sobre nós</a>
+                <ul class="submenu-1">
+                    <li><a href="#">O espaço</a></li>
+                    <li><a href="#">A equipa</a></li>
+                    <li><a href="#">Certificações</a></li>
+                </ul>
+            </li>
+            <li><a href="encomendas.html">Encomendas</a></li>
+            <li><a href="#" style="font-weight: bolder;">Reservas</a></li>
+            <li><a href="contactos.html">Contactos</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li id="learn"><a href="">Aprender</a>
+                <ul class="submenu-1">
+                    <li><a href="learning/c.html">C</a></li>
+                    <li><a href="">CSS</a></li>
+                    <li><a href="">HTML</a></li>
+                    <li><a href="">Javascript</a></li>
+                    <li><a href="">PHP</a></li>
+                    <li><a href="">Python 3</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <h2 style="text-align: center;">Formulário de reservas</h2>
+
+        <!-- FORMULARIO -->
+        <form id="formulario" action="" method="GET" onsubmit="receber_formulario(this)">
+            <div id="form_div">
+                <fieldset>
+                    <legend>Data pretendida</legend>
+                    <label for="form_data">Dia:</label>
+                    <input type="date" min="" max="" name="data" id="form_data">
+                    <label for="form_horas">Horas:</label>
+                    <input type="time" name="horas" id="form_horas">        
+                </fieldset>
+                <fieldset>
+                    <legend>Responsável pelo agendamento:</legend>
+                    <label for="form_nome">Nome:</label>
+                    <input type="text" name="nome" id="form_nome">
+                    <label for="form_telefone">Telefone:</label>
+                    <input type="tel" name="telefone" maxlength="9" pattern="^(?:2\d|9[1236])[0-9]{7}$" id="form_telefone">
+                    <label for="form_email">E-mail:</label>
+                    <input type="email">
+                </fieldset>
+                <fieldset>
+                    <legend>Características do grupo:</legend>
+                    <label for="form_pessoas">Total de pessoas:</label>
+                    <input type="number" size="3" min="1" max="30" name="pessoas" id="form_pessoas">
+                    <label for="form_criancas">Total de crianças:</label>
+                    <input type="number" size="3" min="0" max="24" name="criancas" id="form_criancas">
+                    <label for="form_tipo">Natureza do evento:</label>
+                    <select name="form_tipo" id="form_tipo">Escolha:
+                        <option value="aniversario">Aniversário</option>
+                        <option value="solteiro">Despedida de solteiro</option>
+                        <option value="negocios">Negócios</option>
+                        <option value="romantico">Romântico</option>
+                        <option value="privado">Privado</option>
+                        <option value="outro" selected>Outro...</option>
+                    </select>
+                </fieldset>
+            </div>
+            <button type="submit">Agendar !</button>
+        </form>
+        <!---->
+        <aside>
+            <dl id="lista_agendamentos">
+                Agendamentos:
+                <select name="agendamentos" id="agendamentos"></select>
+            </dl>    
+        </aside>
+    </main>
+    <script src="scripts/reservas.js"></script>
+</body>
+</html>

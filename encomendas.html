@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <link rel="stylesheet" type="text/css" href="css/menus.css">
+    <link rel="stylesheet" type="text/css" href="css/encomendas.css">
     <title>Restaurante</title>
 </head>
 <body>
@@ -17,7 +18,7 @@
         <ul class="menu">
             <li><a href="#">Pratos</a>
                 <ul class="submenu-1">
-                    <li><a href="pratos.html">Abecedário de pitéus</a>
+                    <li><a href="pratos.html">O ABC dos pitéus</a>
                     <li><a href="diarias.html">Menus diários</a></li>
                     <li><a href="especialidades.html">Especialidades</a></li>
                 </ul>
@@ -30,7 +31,7 @@
                 </ul>
             </li>
             <li><a href="#" style="font-weight: bolder;">Encomendas</a></li>
-            <li><a href="projetos.html">Projetos</a></li>
+            <li><a href="reservas.html">Reservas</a></li>
             <li><a href="contactos.html">Contactos</a></li>
             <li><a href="sobre.html">Sobre</a></li>
             <li id="learn"><a href="">Aprender</a>
@@ -46,38 +47,8 @@
         </ul>
     </nav>
     <main>
-        <h2>Formulário de encomendas online</h2>
-        <form id="formulario" action="">
-            <fieldset id="method_picker">
-                <legend>Como quer selecionar o dia?</legend>
-                <label for="metodo">Introduzir data</label>
-                <input type="radio" name="metodo" value="data" checked>
-                <label for="metodo">Escolher dia da semana</label>
-                <input type="radio" name="metodo" value="dia">
-            </fieldset>
-            <fieldset id="data_picker">
-                <label for="data">Data pretendida: </label>
-                <input type="date" min="" name="data">
-            </fieldset>
-            <fieldset id="day_picker" hidden>
-                <!-- TODO: Identificar o dia atual para colocar botão para hoje e restantes dias -->
-                <legend> Dia da semana </legend>
-                <label for="dia_semana">Segunda-feira</label>
-                <input type="radio" name="dia_semana" value="segunda">
-                <label for="dia_semana">Terça-feira</label>
-                <input type="radio" name="dia_semana" value="terca">
-                <label for="dia_semana">Quarta-feira</label>
-                <input type="radio" name="dia_semana" value="quarta">
-                <label for="dia_semana">Quinta-feira</label>
-                <input type="radio" name="dia_semana" value="quinta">
-                <label for="dia_semana">Sexta-feira</label>
-                <input type="radio" name="dia_semana" value="sexta">
-                <label for="dia_semana">Sábado</label>
-                <input type="radio" name="dia_semana" value="sabado">
-                <label for="dia_semana">Domingo</label>
-                <input type="radio" name="dia_semana" value="domingo">
-            </fieldset>
-        </form>
+        <h2 style="text-align: center;">Formulário de encomendas online</h2>
+
     </main>
     <script src="scripts/encomendas.js"></script>
 </body>
