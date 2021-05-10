@@ -24,7 +24,8 @@ function data_em_string(data)
 }
 
 
-//Validação do formulário
+//VALIDAÇÃO DO FORMULÁRIO
+
 const elemento_numero_pessoas = document.getElementById("formulario").querySelectorAll('input[type="number"]');
 for(let element of elemento_numero_pessoas)
 {
@@ -48,6 +49,7 @@ for(let element of elemento_numero_pessoas)
             element.setCustomValidity("");
     }
 }
+
 const elemento_telefone = document.getElementById("form_telefone");
 elemento_telefone.onfocus = (event) =>
 {
@@ -67,7 +69,7 @@ elemento_telefone.oninput = (event) =>
         event.target.setCustomValidity("");
 }
 
-function receber_formulario(element)
+function receber_reserva(element)
 {
     event.preventDefault();
     const elemento_agenda = document.getElementById("agendamentos");

@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <link rel="stylesheet" type="text/css" href="css/menus.css">
     <link rel="stylesheet" type="text/css" href="css/encomendas.css">
-    <title>Restaurante</title>
+    <title>Restaurante | Encomendas</title>
 </head>
 <body>
     <header>
@@ -30,7 +30,7 @@
                     <li><a href="#">Certificações</a></li>
                 </ul>
             </li>
-            <li><a href="#" style="font-weight: bolder;">Encomendas</a></li>
+            <li><a href="encomendas.html" style="font-weight: bolder;">Encomendas</a></li>
             <li><a href="reservas.html">Reservas</a></li>
             <li><a href="contactos.html">Contactos</a></li>
             <li><a href="sobre.html">Sobre</a></li>
@@ -48,8 +48,72 @@
     </nav>
     <main>
         <h2 style="text-align: center;">Formulário de encomendas online</h2>
+        <form id="formulario" action="" method="GET" onsubmit="receber_encomenda(this)">
+            <div id="form_div">
+                <fieldset>
+                    <legend>Para quando e onde o teu prato quentinho</legend>
+                    <label for="form_data">Dia:</label>
+                    <!-- Dia só pode ser superior ao atual -->
+                    <input type="date" min="" max="" name="data" id="form_data" value="data_hoje">
+                    <label for="form_horas">Horas:</label>
+                    <!-- Horas disponíveis:
+                    ALMOÇO: 11:00 às 15:00
+                    JANTAR: 18:00 às 22:00
+                    -->
+                    <select name="horas" id="form_horas">
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                    </select>
+                    <label for="form_minutos">Minutos:</label>
+                    <select name="minutos" id="form_minutos">
+                        <option value="0">00</option>
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="30">30</option>
+                        <option value="40">40</option>
+                        <option value="50">50</option>
+                    </select>
+                    <label for="form_take">Take away</label>    
+                    <input type="radio" name="take_delivery" id="form_take" value="take_away" checked>
+                    <label for="form_delivery">Home delivery</label>
+                    <input type="radio" name="take_delivery" id="form_delivery" value="delivery">
+                </fieldset>
+                <fieldset>
+                    <legend>O teu contacto</legend>
+                    <label for="form_nome">Nome:</label>
+                    <input type="text" name="nome" id="form_nome">
+                    <label for="form_telefone">Telefone:</label>
+                    <input type="tel" name="telefone" maxlength="9" size="10" pattern="^(?:2\d|9[1236])[0-9]{7}$" id="form_telefone">
+                    <label for="form_morada" hidden>Morada:</label>
+                    <input type="text" name="morada" id="form_morada" hidden disabled>
+                </fieldset>
+                <fieldset>
+                    <legend>O que vai ser o pitéu?</legend>
+                    <select name="pratos" id="form_pratos">
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                    </select>
+                    <input type="button" id="form_adicionar" value="Adicionar">
+                    <table id="form_encomenda" hidden>
+                        <caption>Carrinho</caption>
+                        <thead>
+                            <th>Prato</th><th>QTD</th>
+                        </thead>
+                        <tbody></tbody>
+                    </table>    
+                </fieldset>
+            </div>
+            <button type="submit">ENCOMENDAR !</button>
+        </form>
 
     </main>
-    <script src="scripts/encomendas.js"></script>
+    <script type="text/Javascript" src="scripts/encomendas.js"></script>
 </body>
 </html>

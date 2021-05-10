@@ -5,6 +5,24 @@
     box-sizing: border-box;
     /*font-size: 20px;*/
 }
+header
+{
+    animation: color-change 5s ease-in-out alternate infinite;
+}
+@keyframes color-change {
+    0%
+    {
+        background-color: honeydew;
+    }
+    50%
+    {
+        background-color: lightcyan;
+    }
+    100%
+    {
+        background-color: lightseagreen;
+    }
+}
 .navegador
 {
     width: 100%;
@@ -17,17 +35,4 @@
     top: 60px;
     width: 100%;
     margin: 20px;
-}
-section
-{
-    margin: 50px 20%;
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-    text-align: justify;
-}
-section>p, section>h2
-{
-    line-height: 30px;
-    padding: 10px 0;
 }
