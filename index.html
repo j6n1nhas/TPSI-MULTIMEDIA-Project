@@ -1,51 +1,110 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/index.css">
-    <link rel="stylesheet" type="text/css" href="css/menus.css">
-    <title>Restaurante</title>
+    <link rel="shortcut icon" href="img/logojaya.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <title>JAYA Restaurant & Brunch</title>
 </head>
+
 <body>
-    <header>
-        <h1 style="text-align: center;"><a href="index.html" style="text-decoration: none;">RESTAURANTE</a></h1>
+    <!-- Header -->
+    <header class="header">
+        <div class="row">
+            <div class="logo-row">
+             <a href="index.html" aria-label="logotipo link"><img src="img/logojaya.png" alt="" class="logo"></a>
+            </div>
+        </div>
+             <ul class="links" role="list">
+                <li><a href="reservas.html">Reservas</a></li>
+                <li><a href="encomendas.html">Pedidos Online</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="#contactos">Contactos</a></li>
+                <li><a href="#galeria">Galeria</a></li>
+             </ul>
     </header>
-    <!-- Navegador do site -->
-    <nav class="navegador">
-        <ul class="menu">
-            <li><a href="#">Pratos</a>
-                <ul class="submenu-1">
-                    <li><a href="pratos.html">O ABC dos pitéus</a>
-                    <li><a href="diarias.html">Menus diários</a></li>
-                    <li><a href="especialidades.html">Especialidades</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Sobre nós</a>
-                <ul class="submenu-1">
-                    <li><a href="#">O espaço</a></li>
-                    <li><a href="#">A equipa</a></li>
-                    <li><a href="#">Certificações</a></li>
-                </ul>
-            </li>
-            <li><a href="encomendas.html">Encomendas</a></li>
-            <li><a href="reservas.html">Reservas</a></li>
-            <li><a href="contactos.html">Contactos</a></li>
-            <li><a href="sobre.html">Sobre</a></li>
-            <li id="learn"><a href="">Aprender</a>
-                <ul class="submenu-3">
-                    <li><a href="learning/c.html">C</a></li>
-                    <li><a href="">CSS</a></li>
-                    <li><a href="">HTML</a></li>
-                    <li><a href="">Javascript</a></li>
-                    <li><a href="">PHP</a></li>
-                    <li><a href="">Python 3</a></li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
+
+    <!-- Slideshow -->
     <main>
+        <section class="slideshow">
+                
+        </section>
+
+        <!-- Sobre nos -->
+        <section class="container" id="sobre">
+            <h1>BEM-VINDO</h1>
+            <p class="texto-sobre">O Jaya é um espaço criado para todos. Aqui encontra várias opções de almoços, assim como comida de pequeno-almoço<br> que pode disfrutar a qualquer altura do dia.</p>
+            <p>Respeitamos diferentes tipos de dietas, e por isso incluimos na nossa ementa vários pratos sem glutén e vegetarianos: conheça o nosso <strong><a href="menu.html">menu</a></strong>. <br> O nosso amor pela comida reflete-ne naquilo que fazemos. Venha conhecer-nos no coração da cidade de Loulé!</p>
+
+            
+            <!-- Infobox -->
+            <div class="infobox">
+                <h2>HORÁRIO<br</h2>
+                <p>Segunda a Sexta: 9:00 - 19:00<br>Sábado, Domingo e feriados: 9:00 - 14:00</p>
+                <h3>LOCALIZAÇÃO<br</h3>
+                <p>Rua Almeida Garrett 8<br>&nbsp8100-535 &nbspLoulé</p>
+            </div>
+
+        
+        </section>
+
+        <section class="container2" id="pedidos">
+            <h4>TAKE-AWAY E ENTREGAS</h4>
+            <p class="texto-pedidos">Dispomos de serviço de take-away e entregas ao domicílio na cidade de Loulé. Pode ligar-nos ou fazer o seu pedido<br> através do nosso site: Encomende <strong><a href="encomendas.html">aqui</a></strong>.<br><br> Para informações adicionais também pode entrar em contacto connosco preenchendo o nosso formulário de contacto.</p>
+        </section>
     </main>
+
+    <!-- Footer 
+    <footer class="footer" aria-hidden="true">
+        <div class="container-footer">
+            <div class="informacoes">
+
+                <div class="conteudo" aria-hidden="true">
+                    <p><strong>CONTEÚDOS</strong></p>
+                    <a href="#">Recursos novos</a>
+                    <a href="#">O conteúdo mais popular</a>
+                    <a href="#">Pesquisar tendências</a>
+                    <a href="#">Blog</a>
+                </div>
+
+                <div class="informacao" aria-hidden="true">
+                    <p><strong>INFORMAÇÕES</strong></p>
+                    <a href="#">Planos e preços</a>
+                    <a href="#">Afiliado</a>
+                    <a href="#">Sobre nós</a>
+                    <a href="#">Carreiras</a>
+                </div>
+
+                <div class="legal" aria-hidden="true">
+                    <p><strong>LEGAL</strong></p>
+                    <a href="#">Termos e condições</a>
+                    <a href="#">Contrato de licença</a>
+                    <a href="#">Política de privacidade</a>
+                    <a href="#">Política de cookies</a>
+                </div>
+
+                <div class="meios-comunicacao" aria-hidden="true">
+                    <p><strong>MEIOS DE COMUNICAÇÂO</strong></p>
+                    <div class="social">
+                        <a href="https://facebook.com" target="_blank"><img src="img/facebook.svg" alt="icone do facebook"></a>
+                        <a href="https://linkedin.com" target="_blank"><img src="img/linkedin.svg" alt="icone do linkedin"></a>
+                        <a href="https://twitter.com" target="_blank"><img src="img/twitter.svg" alt="icone do twitter"></a>
+                        <a href="https://instagram.com" target="_blank"><img src="img/instagram.svg" alt="icone do instagram"></a>
+                    </div>
+                    <a href="#contactos" class="btn">CONTACTE-NOS</a>
+                </div>
+
+            </div>
+
+            <p>&copy; Copyright Connect 2021. Todos os direitos reservados. </p>
+        </div>
+
+    </footer> -->
+
 </body>
+
 </html>
