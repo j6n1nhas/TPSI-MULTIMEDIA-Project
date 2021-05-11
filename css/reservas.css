@@ -61,26 +61,3 @@ dd
 {
     margin: 20px;
 }
-aside
-{
-    background-color: greenyellow;
-    animation: grow-alert 5s linear 1s;
-}
-@keyframes grow-alert
-{
-    0%
-    {
-        height: 0px;
-        width: 0px;
-    }
-    10%
-    {
-        height: 50px;
-        width: 100px;
-    }
-    100%
-    {
-        height: 100px;
-        width: 100%;
-    }
-}
