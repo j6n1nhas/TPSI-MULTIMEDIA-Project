@@ -148,29 +148,9 @@ function dispor_pratos()
     }
 }
 
-
-// O que acontece quando o elemento minutos muda
-elemento_minutos.onchange = () =>
+function dispor_horas(data)
 {
-    //Captamos a data que está escolhida numa variável
-    const data_la = new Date(elemento_data.value);
-    //Se a data escolhida for hoje
-    if(data_la.getDate() == data_hoje.getDate())
-    {
-        //Se as horas escolhidas forem iguais às atuais e os minutos estiverem abaixo dos minutos atuais
-        if(elemento_horas.value == data_hoje.getHours() && elemento_minutos.value < data_hoje.getMinutes())
-            elemento_minutos.setCustomValidity("Essa hora já passou");
-        else
-            elemento_minutos.setCustomValidity("");
-    }
-}
-
-
-// O que acontece quando o elemento data muda
-elemento_data.onchange = () =>
-{
-    //Captamos a data que está escolhida numa variável
-    const data_la = new Date(elemento_data.value);
+    const data_la = new Date(data);
     if(data_la.getDate() == data_hoje.getDate())
     {
         //Se a data escolhida for o dia de hoje
@@ -183,8 +163,29 @@ elemento_data.onchange = () =>
                 item.disable;
                 item.hidden = true;
             }
+            else if(item.value == data_hoje.getHours() && data_hoje.getMinutes() >= 50)
+            {
+                item.disable;
+                item.hidden = true;
+            }
         }
         for(let item of form_horas.children)
+        {
+            if(!item.hidden)
+            {
+                item.selected = true;
+                break;
+            }
+        }
+        for(let item of form_minutos.children)
+        {
+            if(item.value <= data_hoje.getMinutes())
+            {
+                item.disable;
+                item.hidden = true;
+            }
+        }
+        for(let item of form_minutos.children)
         {
             if(!item.hidden)
             {
@@ -211,10 +212,30 @@ elemento_data.onchange = () =>
                 break;
             }
         }
+        for(let item of form_minutos.children)
+        {
+            item.disable = false;
+            item.hidden = false;
+        }
+        for(let item of form_minutos.children)
+        {
+            if(!item.hidden)
+            {
+                item.selected = true;
+                break;
+            }
+        }
     }
-    dispor_pratos();
 }
 
+// O que acontece quando o elemento data muda
+elemento_data.onchange = function()
+{
+    //Captamos a data que está escolhida numa variável
+    const data_la = new Date(this.value);
+    dispor_horas(data_la);
+    dispor_pratos();
+}
 
 const take_delivery = formulario.take_delivery;
 for(let item of take_delivery)
@@ -297,4 +318,5 @@ window.onload = () =>
     console.info("Data hoje: " + data_hoje);
     console.info("São " + horas_agora + " horas");
     dispor_pratos();
+    dispor_horas(new Date(elemento_data.value));
 }

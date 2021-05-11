@@ -1,15 +1,12 @@
 //Descobrimos que dia é hoje
 const data_hoje = new Date();
-//Transformamos em string no formato: "YYYYMMDD"
-let hoje_str = data_em_string(data_hoje);
-//Colocamos em formato YYYY-MM-DD para poder ser associado ao valor min e max da data no HTML
-hoje_str = hoje_str.substr(0, 4) + "-" + hoje_str.substr(4, 2) + "-" + hoje_str.substr(6);
+//Transformamos em string no formato: "YYYY-MM-DD"
+const hoje_str = data_em_string(data_hoje);
 
 //Fazemos o mesmo processo para definir uma data máxima admissível (30 dias)
 const data_limite = new Date();
 data_limite.setDate(data_hoje.getDate() + 60);
-let limite_str = data_em_string(data_limite);
-limite_str = limite_str.substr(0, 4) + "-" + limite_str.substr(4, 2) + "-" + limite_str.substr(6);
+const limite_str = data_em_string(data_limite);
 
 //Atribuimos o valor min e max ao elemento de data
 const elemento_data = document.querySelector('input[type="date"]');
@@ -18,10 +15,11 @@ elemento_data.value = hoje_str;
 elemento_data.max = limite_str;
 
 function data_em_string(data)
-{   //Recebe um objeto Date e devolve uma string no formato YYYYMMDD
+{   //Recebe um objeto Date e devolve uma string no formato YYYY-MM-DD
     const retorno = (data.getFullYear() * 10000 + (data.getMonth() + 1) * 100 + data.getDate()).toString();
-    return retorno;
+    return retorno.substr(0, 4) + "-" + retorno.substr(4, 2) + "-" + retorno.substr(6);
 }
+
 
 
 //VALIDAÇÃO DO FORMULÁRIO
@@ -29,10 +27,6 @@ function data_em_string(data)
 const elemento_numero_pessoas = document.getElementById("formulario").querySelectorAll('input[type="number"]');
 for(let element of elemento_numero_pessoas)
 {
-    element.onfocus = () =>
-    {
-        element.setCustomValidity("");
-    }
     element.oninput = () =>
     {
         const validade = element.validity;
@@ -51,10 +45,6 @@ for(let element of elemento_numero_pessoas)
 }
 
 const elemento_telefone = document.getElementById("form_telefone");
-elemento_telefone.onfocus = (event) =>
-{
-    event.target.setCustomValidity("");
-}
 elemento_telefone.oninput = (event) =>
 {
     const validade_telefone = event.target.validity;
@@ -67,6 +57,30 @@ elemento_telefone.oninput = (event) =>
     }
     else
         event.target.setCustomValidity("");
+}
+
+form_data.addEventListener("change", function()
+{
+    dispor_horas();
+});
+
+// Função para definir as horas mínimas admissíveis no caso de ser escolhida a data atual
+function dispor_horas()
+{
+    const data_la = new Date(form_data.value);
+    if(data_la.getDate() == data_hoje.getDate() && data_la.getMonth() == data_hoje.getMonth())
+    {
+        let intervalo_min = new Date()
+        intervalo_min.setMinutes(intervalo_min.getMinutes() + 30);
+        intervalo_min = (intervalo_min.getHours()*100 + intervalo_min.getMinutes()).toString();
+        intervalo_min = intervalo_min.substr(0, 2) + ":" + intervalo_min.substr(2);
+        form_horas.min = intervalo_min;
+    }
+    else
+    {
+        form_horas.min = "11:00";
+        form_horas.max = "21:30";
+    }
 }
 
 function receber_reserva(element)
@@ -95,4 +109,10 @@ function receber_reserva(element)
         elemento_lista_agenda.appendChild(dt);
         elemento_lista_agenda.appendChild(dd);
     }
+}
+
+
+window.onload = () =>
+{
+    dispor_horas();
 }
