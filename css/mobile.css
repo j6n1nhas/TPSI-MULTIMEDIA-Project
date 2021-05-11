@@ -1,0 +1,109 @@
+@media(max-width:580px) {
+    /* MOBILE */
+    /* HEADER */
+    .header {
+        margin: 0;
+        flex-direction: column;
+    }
+    .links {
+        margin: 15px auto;
+    }
+    /* SLIDESHOW */
+    .slideshow {
+        width: 100%;
+        height: 200px;
+    }
+    .texto-slideshow h1 {
+        background: lightgray;
+        padding: 15px;
+        top: 30px;
+        left: 80px;
+        width: 70%;
+        border-radius: 10px;
+        opacity: 0.8;
+        font-size: 1.8rem;
+        margin: 0 auto;
+        animation: slide-left 2s ease-in;
+    }
+    .texto-slideshow a {
+        top: 130px;
+        left: 80px;
+        width: 40%;
+        font-weight: bold;
+        animation: slide-left 2s ease-in;
+    }
+    /* SERVIÇOS  */
+    #sobre {
+        text-align: center;
+    }
+    #sobre p {
+        animation: mudar-cor 5s forwards;
+    }
+    .cartoes {
+        flex-direction: column;
+    }
+    .cartao {
+        width: 100%;
+    }
+    .cartao:hover {
+        animation: alterar-cartao 1s ease-in;
+    }
+    .cartao:nth-child(2) {
+        margin: 20px 0px;
+    }
+    /* FORMULÁRIO */
+    .form {
+        width: 100%;
+    }
+    .form .botao {
+        width: 100%;
+        font-weight: bold;
+    }
+    .form .botao:hover {
+        animation: pulsar 3s infinite;
+    }
+    /* FOOTER */
+    .informacoes {
+        flex-direction: column;
+        text-align: center;
+    }
+    .informacao {
+        margin: 20px 0px;
+    }
+    .meios-comunicacao {
+        margin: 20px 0px;
+    }
+}
+
+@keyframes slide-left {
+    0% {
+        left: -250px;
+    }
+}
+
+@keyframes mudar-cor {
+    0% {
+        color: darkblue;
+    }
+}
+
+@keyframes alterar-cartao {
+    0% {
+        border-radius: 50%;
+    }
+    100% {
+        border-radius: 10%;
+    }
+}
+
+@keyframes pulsar {
+    0% {
+        background: var(--cor-botao);
+    }
+    50% {
+        background: #06a749;
+    }
+    100% {
+        background: var(--cor-botao);
+    }
+}

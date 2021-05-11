@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <g id="Grupo_3" data-name="Grupo 3" transform="translate(-131.099 -36)">
+    <g id="Elipse_1" data-name="Elipse 1" transform="translate(131.099 36)" fill="#0b0a31" stroke="#707070" stroke-width="1">
+      <circle cx="64" cy="64" r="64" stroke="none"/>
+      <circle cx="64" cy="64" r="63.5" fill="none"/>
+    </g>
+    <path id="Icon_material-business" data-name="Icon material-business" d="M33.722,16.789V4.5H3V59.8H64.445V16.789ZM15.289,53.656H9.144V47.511h6.144Zm0-12.289H9.144V35.222h6.144Zm0-12.289H9.144V22.933h6.144Zm0-12.289H9.144V10.644h6.144ZM27.578,53.656H21.433V47.511h6.144Zm0-12.289H21.433V35.222h6.144Zm0-12.289H21.433V22.933h6.144Zm0-12.289H21.433V10.644h6.144ZM58.3,53.656H33.722V47.511h6.144V41.367H33.722V35.222h6.144V29.078H33.722V22.933H58.3ZM52.156,29.078H46.011v6.144h6.144Zm0,12.289H46.011v6.144h6.144Z" transform="translate(161.376 67.85)" fill="#fff"/>
+  </g>
+</svg>

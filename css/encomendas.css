@@ -2,7 +2,34 @@ form *:invalid
 {
     box-shadow: 10px 10px 5px red;
 }
+h2 {
+    font-family: Elsie;
+    font-size: 39px;
+    font-style: normal;
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
 legend
 {
-    padding: 0 15px;
+    padding: 15px 15px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    border: 5px solid #4b0d5e86;
+    border-radius: 10px;
+    margin: 20px 30px 50px 30px;
+    padding: 10px 10px 20px 10px;
+}
+form>button
+{
+    margin: 50px 0 40px;
+    font-family: Futura;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    padding: 8px;
+    text-align: center;
+    width: 282px;
+    margin-left: 482px;
 }

@@ -4,71 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/index.css">
-    <link rel="stylesheet" type="text/css" href="css/menus.css">
+    <link rel="shortcut icon" href="img/logojaya.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobile.css">
     <link rel="stylesheet" type="text/css" href="css/encomendas.css">
-    <title>Restaurante | Encomendas</title>
+    <title>JAYA · Pedido Online</title>
 </head>
 <body>
-    <header>
-        <h1 style="text-align: center;"><a href="index.html" style="text-decoration: none;">RESTAURANTE</a></h1>
+    <!-- Header -->
+    <header class="header">
+        <div class="row">
+            <div class="logo-row">
+             <a href="index.html" aria-label="logotipo link"><img src="img/logojaya.png" alt="" class="logo"></a>
+            </div>
+        </div>
+             <ul class="links" role="list">
+                <li><a href="reservas.html">Reservas</a></li>
+                <li><a href="encomendas.html">Pedidos Online</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#contactos">Contactos</a></li>
+                <li><a href="#galeria">Galeria</a></li>
+             </ul>
     </header>
-    <!-- Navegador do site -->
-    <nav class="navegador">
-        <ul class="menu">
-            <li><a href="#">Pratos</a>
-                <ul class="submenu-1">
-                    <li><a href="pratos.html">O ABC dos pitéus</a>
-                    <li><a href="diarias.html">Menus diários</a></li>
-                    <li><a href="especialidades.html">Especialidades</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Sobre nós</a>
-                <ul class="submenu-1">
-                    <li><a href="#">O espaço</a></li>
-                    <li><a href="#">A equipa</a></li>
-                    <li><a href="#">Certificações</a></li>
-                </ul>
-            </li>
-            <li><a href="encomendas.html" style="font-weight: bolder;">Encomendas</a></li>
-            <li><a href="reservas.html">Reservas</a></li>
-            <li><a href="contactos.html">Contactos</a></li>
-            <li><a href="sobre.html">Sobre</a></li>
-            <li id="learn"><a href="">Aprender</a>
-                <ul class="submenu-3">
-                    <li><a href="learning/c.html">C</a></li>
-                    <li><a href="">CSS</a></li>
-                    <li><a href="">HTML</a></li>
-                    <li><a href="">Javascript</a></li>
-                    <li><a href="">PHP</a></li>
-                    <li><a href="">Python 3</a></li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
     <main>
-        <h2 style="text-align: center;">Formulário de encomendas online</h2>
+        <h2 style="text-align: center;">FORMULÁRIO DE ENCOMENDA</h2>
         <form id="formulario" action="" method="GET" onsubmit="receber_encomenda(this)">
             <div id="form_div">
                 <fieldset>
-                    <legend>Para quando e onde o teu prato quentinho</legend>
+                    <legend>Para quando?</legend>
                     <label for="form_data">Dia:</label>
                     <!-- Dia só pode ser superior ao atual -->
                     <input type="date" min="" max="" name="data" id="form_data" value="data_hoje">
                     <label for="form_horas">Horas:</label>
-                    <!-- Horas disponíveis:
-                    ALMOÇO: 11:00 às 15:00
-                    JANTAR: 18:00 às 22:00
-                    -->
+                    <!-- Horas disponíveis-->
                     <select name="horas" id="form_horas">
+                        <option value="10">10</option>
                         <option value="11">11</option>
                         <option value="12">12</option>
                         <option value="13">13</option>
                         <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
                         <option value="18">18</option>
-                        <option value="19">19</option>
-                        <option value="20">20</option>
-                        <option value="21">21</option>
                     </select>
                     <label for="form_minutos">Minutos:</label>
                     <select name="minutos" id="form_minutos">
@@ -85,7 +63,7 @@
                     <input type="radio" name="take_delivery" id="form_delivery" value="delivery">
                 </fieldset>
                 <fieldset>
-                    <legend>O teu contacto</legend>
+                    <legend>Informações de contacto</legend>
                     <label for="form_nome">Nome:</label>
                     <input type="text" name="nome" id="form_nome">
                     <label for="form_telefone">Telefone:</label>
@@ -94,7 +72,7 @@
                     <input type="text" name="morada" id="form_morada" hidden disabled>
                 </fieldset>
                 <fieldset>
-                    <legend>O que vai ser o pitéu?</legend>
+                    <legend>O seu pedido</legend>
                     <select name="pratos" id="form_pratos">
                         <option value=""></option>
                         <option value=""></option>
@@ -110,7 +88,7 @@
                     </table>    
                 </fieldset>
             </div>
-            <button type="submit">ENCOMENDAR !</button>
+            <button type="submit">Encomendar agora</button>
         </form>
 
     </main>
