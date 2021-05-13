@@ -228,6 +228,54 @@ function dispor_horas(data)
     }
 }
 
+
+//Garantir que quando escolhemos o dia de hoje e a hora atual, não apareçam minutos inferiores aos atuais
+elemento_horas.addEventListener("change", function()
+{
+    const data_la = new Date(elemento_data.value);
+    const hora_la = this.value;
+    if(data_la.getDate() == data_hoje.getDate() && data_hoje.getHours() == hora_la)
+    {
+        for(let item of form_minutos.children)
+        {
+            if(item.value < data_hoje.getMinutes())
+            {
+                item.disable;
+                item.hidden = true;
+            }
+            else
+            {
+                item.disable = false;
+                item.hidden = false;
+            }
+        }
+        for(let item of form_minutos.children)
+        {
+            if(!item.hidden)
+            {
+                item.selected = true;
+                break;
+            }
+        }
+    }
+    else
+    {
+        for(let item of form_minutos.children)
+        {
+            item.disable = false;
+            item.hidden = false;
+        }
+        for(let item of form_minutos.children)
+        {
+            if(!item.hidden)
+            {
+                item.selected = true;
+                break;
+            }
+        }
+    }
+});
+
 // O que acontece quando o elemento data muda
 elemento_data.onchange = function()
 {
@@ -259,6 +307,13 @@ for(let item of take_delivery)
 
 document.getElementById("form_adicionar").addEventListener("click", () =>
 {
+    //Bloquear campos
+    for(let item of document.querySelectorAll("#form_div input, #form_div select"))
+    {
+        item.disabled = true;
+        item.readOnly = true;
+    }
+    //Mostrar a tabela e acrescentar items a esta
     form_encomenda.hidden = false;
     const pratos = formulario.form_pratos;
     const encomenda = document.getElementsByTagName("tbody")[0];
@@ -307,16 +362,11 @@ elemento_telefone.oninput = (event) =>
         event.target.setCustomValidity("");
 }
 
-
-
-
 function receber_encomenda(element)
 {}
 
 window.onload = () =>
 {
-    console.info("Data hoje: " + data_hoje);
-    console.info("São " + horas_agora + " horas");
     dispor_pratos();
     dispor_horas(new Date(elemento_data.value));
 }

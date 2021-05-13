@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/logojaya.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/mobile.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/mobile.css">
     <link rel="stylesheet" type="text/css" href="css/encomendas.css">
     <title>JAYA · Pedido Online</title>
 </head>
@@ -71,26 +71,25 @@
                     <label for="form_morada" hidden>Morada:</label>
                     <input type="text" name="morada" id="form_morada" hidden disabled>
                 </fieldset>
-                <fieldset>
-                    <legend>O seu pedido</legend>
-                    <select name="pratos" id="form_pratos">
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                    </select>
-                    <input type="button" id="form_adicionar" value="Adicionar">
-                    <table id="form_encomenda" hidden>
-                        <caption>Carrinho</caption>
-                        <thead>
-                            <th>Prato</th><th>QTD</th>
-                        </thead>
-                        <tbody></tbody>
-                    </table>    
-                </fieldset>
             </div>
+            <fieldset id="lista">
+                <legend>O seu pedido</legend>
+                <select name="pratos" id="form_pratos">
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                </select>
+                <input type="button" id="form_adicionar" value="Adicionar">
+                <table id="form_encomenda" hidden>
+                    <caption>Carrinho</caption>
+                    <thead>
+                        <th>Prato</th><th>QTD</th>
+                    </thead>
+                    <tbody></tbody>
+                </table>    
+            </fieldset>
             <button type="submit">Encomendar agora</button>
         </form>
-
     </main>
     <script type="text/Javascript" src="scripts/encomendas.js"></script>
 </body>
