@@ -1,6 +1,8 @@
-form *:invalid
-{
+form *:invalid {
     box-shadow: 10px 10px 5px red;
+}
+form * {
+    font-size: large;
 }
 h2 {
     font-family: Elsie;
@@ -9,10 +11,24 @@ h2 {
     margin-top: 20px;
     margin-bottom: 25px;
 }
-legend
-{
+fieldset {
+    margin: 15px;
+    padding: 10px;
+}
+#lista {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+legend {
     padding: 15px 15px;
 }
+
+fieldset input, fieldset select {
+    margin-right: 30px;
+}
+
 form {
     display: flex;
     flex-direction: column;
@@ -21,9 +37,9 @@ form {
     margin: 20px 30px 50px 30px;
     padding: 10px 10px 20px 10px;
 }
-form>button
-{
-    margin: 50px 0 40px;
+
+form>button {
+    margin: 50px;
     font-family: Futura;
     font-style: normal;
     font-weight: 400;
@@ -31,5 +47,10 @@ form>button
     padding: 8px;
     text-align: center;
     width: 282px;
-    margin-left: 482px;
+    align-self: center;
+}
+
+main
+{
+    padding: 40px 50px 0 50px;
 }

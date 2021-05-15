@@ -177,6 +177,7 @@ function dispor_horas(data)
                 break;
             }
         }
+        /*
         for(let item of form_minutos.children)
         {
             if(item.value <= data_hoje.getMinutes())
@@ -193,6 +194,7 @@ function dispor_horas(data)
                 break;
             }
         }
+        */
     }
     //Se for outro dia qualquer, então temos de nos certificar que as horas estão todas visíveis
     else

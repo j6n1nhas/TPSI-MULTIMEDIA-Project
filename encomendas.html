@@ -11,20 +11,20 @@
     <title>JAYA · Pedido Online</title>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="row">
-            <div class="logo-row">
-             <a href="index.html" aria-label="logotipo link"><img src="img/logojaya.png" alt="" class="logo"></a>
+    <!-- HEADER -->
+    <header>
+        <div class="logo-row">
+            <a href="index.html" aria-label="logotipo link"><img src="img/logojaya.png" alt="" id="logo"></a>
+            <div>
+                <ul class="links" role="list">
+                    <li><a href="reservas.html">Reservas</a></li>
+                    <li><a href="encomendas.html">Pedidos Online</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="#contactos">Contactos</a></li>
+                    <li><a href="#galeria">Galeria</a></li>
+                </ul>
             </div>
         </div>
-             <ul class="links" role="list">
-                <li><a href="reservas.html">Reservas</a></li>
-                <li><a href="encomendas.html">Pedidos Online</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#contactos">Contactos</a></li>
-                <li><a href="#galeria">Galeria</a></li>
-             </ul>
     </header>
     <main>
         <h2 style="text-align: center;">FORMULÁRIO DE ENCOMENDA</h2>
@@ -74,19 +74,23 @@
             </div>
             <fieldset id="lista">
                 <legend>O seu pedido</legend>
-                <select name="pratos" id="form_pratos">
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                </select>
-                <input type="button" id="form_adicionar" value="Adicionar">
-                <table id="form_encomenda" hidden>
-                    <caption>Carrinho</caption>
-                    <thead>
-                        <th>Prato</th><th>QTD</th>
-                    </thead>
-                    <tbody></tbody>
-                </table>    
+                <div>
+                    <select name="pratos" id="form_pratos">
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                    </select>
+                    <input type="button" id="form_adicionar" value="Adicionar">
+                </div>
+                <div>
+                    <table id="form_encomenda" hidden>
+                        <caption>Carrinho</caption>
+                        <thead>
+                            <th>Prato</th><th>QTD</th>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
             </fieldset>
             <button type="submit">Encomendar agora</button>
         </form>
