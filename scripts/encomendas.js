@@ -55,9 +55,9 @@ menus["domingo"] = {
 };
 
 //Atribuimos o valor min e max ao elemento de data
-if(data_hoje.getHours() >= 22)
+if(data_hoje.getHours() >= 19)
 {
-    //Se a hora atual passar das 22h, definimos a data mínima para o dia seguinte
+    //Se a hora atual passar das 19h, definimos a data mínima para o dia seguinte
     let d = new Date();
     d.setDate(data_hoje.getDate() + 1);
     d = data_em_string(d);
@@ -148,9 +148,10 @@ function dispor_pratos()
     }
 }
 
-function dispor_horas(data)
+function dispor_horas(data_la)
 {
-    const data_la = new Date(data);
+    console.log(data_la.getDay());
+
     if(data_la.getDate() == data_hoje.getDate())
     {
         //Se a data escolhida for o dia de hoje
@@ -160,12 +161,12 @@ function dispor_horas(data)
             if(item.value < data_hoje.getHours())
             {
                 //Se a hora no elemento option em causa for menor do que a hora atual, vamos desativá-la e escondê-la
-                item.disable;
+                item.disabled = true;
                 item.hidden = true;
             }
             else if(item.value == data_hoje.getHours() && data_hoje.getMinutes() >= 50)
             {
-                item.disable;
+                item.disabled = true;
                 item.hidden = true;
             }
         }
@@ -203,7 +204,7 @@ function dispor_horas(data)
         for(let item of form_horas.children)
         {
             //Ativamo-lo e deixamo-lo visível
-            item.disable = false;
+            item.disabled = false;
             item.hidden = false;
         }
         for(let item of form_horas.children)
@@ -216,7 +217,7 @@ function dispor_horas(data)
         }
         for(let item of form_minutos.children)
         {
-            item.disable = false;
+            item.disabled = false;
             item.hidden = false;
         }
         for(let item of form_minutos.children)
@@ -226,6 +227,26 @@ function dispor_horas(data)
                 item.selected = true;
                 break;
             }
+        }
+    }
+    if(data_la.getDay() == 0 || data_la.getDay() == 6)
+    {
+        for(let item of form_horas.children)
+        {
+            if(item.value > 13)
+            {
+                item.disabled = true;
+                item.hidden = true;
+                console.log(item);
+            }
+        }
+    }
+    else
+    {
+        for(let item of form_horas.children)
+        {
+            item.disabled = false;
+            item.hidden = false;
         }
     }
 }
@@ -242,12 +263,12 @@ elemento_horas.addEventListener("change", function()
         {
             if(item.value < data_hoje.getMinutes())
             {
-                item.disable;
+                item.disabled = true;
                 item.hidden = true;
             }
             else
             {
-                item.disable = false;
+                item.disabled = false;
                 item.hidden = false;
             }
         }
@@ -264,7 +285,7 @@ elemento_horas.addEventListener("change", function()
     {
         for(let item of form_minutos.children)
         {
-            item.disable = false;
+            item.disabled = false;
             item.hidden = false;
         }
         for(let item of form_minutos.children)

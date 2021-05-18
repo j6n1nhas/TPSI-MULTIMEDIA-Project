@@ -1,9 +1,11 @@
 form *:invalid {
     box-shadow: 10px 10px 5px red;
 }
+
 form * {
     font-size: large;
 }
+
 h2 {
     font-family: Elsie;
     font-size: 39px;
@@ -11,10 +13,12 @@ h2 {
     margin-top: 20px;
     margin-bottom: 25px;
 }
+
 fieldset {
     margin: 15px;
     padding: 10px;
 }
+
 #lista {
     display: flex;
     flex-direction: row;

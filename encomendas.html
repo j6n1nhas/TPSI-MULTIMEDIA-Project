@@ -28,7 +28,7 @@
     </header>
     <main>
         <h2 style="text-align: center;">FORMULÁRIO DE ENCOMENDA</h2>
-        <form id="formulario" action="" method="GET" onsubmit="receber_encomenda(this)">
+        <form id="formulario" action="" method="GET" netlify onsubmit="receber_encomenda(this)">
             <div id="form_div">
                 <fieldset>
                     <legend>Para quando?</legend>
@@ -38,6 +38,7 @@
                     <label for="form_horas">Horas:</label>
                     <!-- Horas disponíveis-->
                     <select name="horas" id="form_horas">
+                        <option value="9">9</option>
                         <option value="10">10</option>
                         <option value="11">11</option>
                         <option value="12">12</option>
@@ -65,11 +66,11 @@
                 <fieldset>
                     <legend>Informações de contacto</legend>
                     <label for="form_nome">Nome:</label>
-                    <input type="text" name="nome" id="form_nome">
+                    <input type="text" size="15" name="nome" id="form_nome">
                     <label for="form_telefone">Telefone:</label>
-                    <input type="tel" name="telefone" maxlength="9" size="10" pattern="^(?:2\d|9[1236])[0-9]{7}$" id="form_telefone">
+                    <input type="tel" name="telefone" maxlength="9" size="5" pattern="^(?:2\d|9[1236])[0-9]{7}$" id="form_telefone">
                     <label for="form_morada" hidden>Morada:</label>
-                    <input type="text" name="morada" id="form_morada" hidden disabled>
+                    <input type="text" name="morada" size="25" id="form_morada" hidden disabled>
                 </fieldset>
             </div>
             <fieldset id="lista">

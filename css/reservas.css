@@ -30,9 +30,9 @@ form input:invalid
     padding: 10px;
     margin: 10px 10px;
 }
-form>button
-{
-    margin: 50px 0 50px;
+
+form>button {
+    margin: 50px;
     font-family: Futura;
     font-style: normal;
     font-weight: 400;
@@ -40,8 +40,9 @@ form>button
     padding: 8px;
     text-align: center;
     width: 282px;
-    margin-left: 482px;
+    align-self: center;
 }
+
 fieldset
 {
     display: flex;
