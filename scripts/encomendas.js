@@ -150,8 +150,6 @@ function dispor_pratos()
 
 function dispor_horas(data_la)
 {
-    console.log(data_la.getDay());
-
     if(data_la.getDate() == data_hoje.getDate())
     {
         //Se a data escolhida for o dia de hoje
@@ -176,6 +174,25 @@ function dispor_horas(data_la)
             {
                 item.selected = true;
                 break;
+            }
+        }
+        console.log(form_horas);
+        if(form_horas.value == data_hoje.getHours())
+        {
+            for(let item of form_minutos.children)
+            {
+                if(item.value < data_hoje.getMinutes())
+                {
+                    item.disabled = true;
+                    item.hidden = true;
+                }
+                else
+                {
+                    item.disabled = false;
+                    item.hidden = false;
+                    item.selected = true;
+                    break;
+                }
             }
         }
         /*
@@ -237,7 +254,6 @@ function dispor_horas(data_la)
             {
                 item.disabled = true;
                 item.hidden = true;
-                console.log(item);
             }
         }
     }
@@ -385,8 +401,10 @@ elemento_telefone.oninput = (event) =>
         event.target.setCustomValidity("");
 }
 
-function receber_encomenda(element)
-{}
+function receber_encomenda(event, element)
+{
+    event.preventDefault();
+}
 
 window.onload = () =>
 {

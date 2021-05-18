@@ -11,210 +11,216 @@
   font-family: "Futura";
 }
 
+@media screen and (min-width: 640px) {
 
-/* HEADER */
-header {
-  position: sticky;
-  top: 0;
-  z-index: 99;
-  opacity: .8;
-  background-color: #fff;
-  padding: 0 20px;
-}
+  #hamnav label, #hamburguer {
+    display: none;
+  }
 
-.logo-row {
-  display: flex;
-  justify-content: space-between;
-}
-
-#logo {
-  width: 160px;
-}
-
-.links {
-  display: flex;
-  flex-direction: row;
-  list-style: none;
-  align-items: center;
-  height: 100%;
-}
-
-.links a {
-  text-decoration: none;
-  color: rgb(0, 0, 0);
-  margin: 0 20px;
-}
-
-.links a:hover {
-  opacity: 0.5;
-}
-
-/* BANNER */
-
-.banner {
-  background: url("../img/foodbackground.png") no-repeat center center/cover;
-  height: 50vh;
-  position: relative;
-  margin-top: 10px;
-}
-
-
-/* SOBRE */
-
-.container {
-  width: 80%;
-  margin-top: 120px;
-  margin: auto 10%;
-}
-
-h1 {
-  font-family: Elsie;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 50px;
-  line-height: 94px;
-  color: #000000;
-  margin: 50px auto;
-}
-
-p {
-  line-height: 33px;
-  font-size: 17px;
-}
-
-a {
-  text-decoration: none;
-  color: #000;
-}
-
-
-/* HORARIO e LOCAL */
-
-.infobox {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  align-items: center;
-  justify-content: center;
-  margin: 50px 0;
-  width: 100%;
-  height: 600px;
-  text-align: center;
-}
-
-.infobox::before {
-    content: "";
-    position: absolute;
-    background-image: url("../img/infoback.jpg");
-    background-size: cover;
-    opacity: 0.5;
+  /* HEADER */
+  header {
+    position: sticky;
     top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-}
+    z-index: 99;
+    opacity: .8;
+    background-color: #fff;
+    padding: 0 20px;
+  }
 
-h2 {
-   position: relative;
-   color: rgb(53, 51, 51);
-   font-size: 42px;
-   text-align: center;
-   font-family: Elsie;
-   font-weight: normal;
-   line-height: 55px;
-   margin-top: 30px;
-}
+  .logo-row {
+    display: flex;
+    justify-content: space-between;
+  }
 
-.infobox p {
+  #logo {
+    width: 160px;
+  }
+
+  .links {
+    display: flex;
+    list-style: none;
+    height: 100%;
+    align-items: center;
+  }
+
+  .links a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    margin: 0 20px;
+  }
+
+  .links a:hover {
+    opacity: .5;
+  }
+
+
+  /* BANNER */
+
+  .banner {
+    background: url("../img/foodbackground.png") no-repeat center center/cover;
+    height: 50vh;
     position: relative;
-    font-family: Futura;
-    font-size: 20px;
-    line-height: 40px;
-    padding-top: 20px;
-    margin-bottom: 50px;
-}
+    margin-top: 10px;
+  }
 
- h3 {
-    position: initial;
-    display: inline;
-    width: 610px;
-    height: 66px;
+
+  /* SOBRE */
+
+  .container {
+    width: 80%;
+    margin-top: 120px;
+    margin: auto 10%;
+  }
+
+  h1 {
     font-family: Elsie;
     font-style: normal;
-    font-weight: 350;
-    font-size: 47px;
-    line-height: 180px;
-    text-align: center;
+    font-weight: normal;
+    font-size: 50px;
+    line-height: 94px;
     color: #000000;
-    border-style: solid;
-    border-width: 1px;
-    border-color: rgb(173, 139, 240);
-    border-radius: 3px;
-    margin: 59px;
-    padding: 10px 22px;
- }
+    margin: 50px auto;
+  }
+
+  p {
+    line-height: 33px;
+    font-size: 17px;
+  }
+
+  a {
+    text-decoration: none;
+    color: #000;
+  }
 
 
-/* FOOTER */
+  /* HORARIO e LOCAL */
 
-footer {
-  background: linear-gradient(white, var(--cor-site));
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  padding: 50px;
-  margin-top: 30px;
-}
+  .infobox {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 0;
+    width: 100%;
+    height: 600px;
+    text-align: center;
+  }
 
-#social-media {
-  display: flex;
-  flex-direction: row;
-}
+  .infobox::before {
+      content: "";
+      position: absolute;
+      background-image: url("../img/infoback.jpg");
+      background-size: cover;
+      opacity: 0.5;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+  }
 
-#contactos {
-  display: flex;
-  flex-direction: column;
-}
+  h2 {
+    position: relative;
+    color: rgb(53, 51, 51);
+    font-size: 42px;
+    text-align: center;
+    font-family: Elsie;
+    font-weight: normal;
+    line-height: 55px;
+    margin-top: 30px;
+  }
 
-.social-icons {
-  width: 50px;
-  height: auto;
-  margin: 10px;
-}
+  .infobox p {
+      position: relative;
+      font-family: Futura;
+      font-size: 20px;
+      line-height: 40px;
+      padding-top: 20px;
+      margin-bottom: 50px;
+  }
 
-.container-footer {
-  width: 80%;
-  margin: 0 auto;
-}
+  h3 {
+      position: initial;
+      display: inline;
+      width: 610px;
+      height: 66px;
+      font-family: Elsie;
+      font-style: normal;
+      font-weight: 350;
+      font-size: 47px;
+      line-height: 180px;
+      text-align: center;
+      color: #000000;
+      border-style: solid;
+      border-width: 1px;
+      border-color: var(--cor-site);
+      border-radius: 3px;
+      margin: 59px;
+      padding: 10px 22px;
+  }
 
-.informacoes {
-  display: flex;
-  justify-content: space-between;
-}
 
-.informacoes a {
-  display: block;
-  text-decoration: none;
-  color: #000;
-}
+  /* FOOTER */
 
-.meios-comunicacao img {
-  width: 50px;
-  margin: 30px 10px;
-}
+  footer {
+    background: linear-gradient(white, var(--cor-site));
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 50px;
+    margin-top: 30px;
+  }
 
-.meios-comunicacao .btn {
-  background-color: #000;
-  padding: 10px 15px;
-  text-align: center;
-  text-transform: uppercase;
-  border: none;
-  cursor: pointer;
-}
+  #social-media {
+    display: flex;
+    flex-direction: row;
+  }
 
-.meios-comunicacao a {
-  display: inline;
-  text-decoration: none;
-  color: #313131;
-  border-radius: 5px;
+  #contactos {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .social-icons {
+    width: 50px;
+    height: auto;
+    margin: 10px;
+  }
+
+  .container-footer {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .informacoes {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .informacoes a {
+    display: block;
+    text-decoration: none;
+    color: #000;
+  }
+
+  .meios-comunicacao img {
+    width: 50px;
+    margin: 30px 10px;
+  }
+
+  .meios-comunicacao .btn {
+    background-color: #000;
+    padding: 10px 15px;
+    text-align: center;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+  }
+
+  .meios-comunicacao a {
+    display: inline;
+    text-decoration: none;
+    color: #313131;
+    border-radius: 5px;
+  }
 }
