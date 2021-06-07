@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Elsie&display=swap');
+
+:root {
+    --cor-bg: #ccc;
+    --cor-site: rgb(173, 139, 240);
+  }
+  
+main
+{
+    width: 70%;
+    border: 5px solid var(--cor-site);
+    border-radius: 20px;
+    margin: 50px 15%;
+}
+main img {
+    width: 200px;
+    height: 200px;
+    border-radius: 25px;
+}
+.pratos
+{
+    display: flex;
+    margin: 50px;
+}
+
+.pratos > .descricao
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+main dt {
+    font-weight: bold;
+    margin: 15px 0;
+}
+main dd {
+    color: var(--cor-site);
+    font-weight: bold;
+}

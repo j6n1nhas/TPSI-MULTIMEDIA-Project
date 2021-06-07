@@ -19,34 +19,34 @@ const pratos = formulario.form_pratos;
 
 const menus = new Object();
 menus["2afeira"] = {
-    "Carne": "Feijoada à transmontana",
-    "Peixe": "Dourada grelhada",
-    "Especialidade": "Sopa da pedra",
+    "Carne": "Lasanha de abóbora com frango",
+    "Peixe": "Dourada grelhada com legumes cozidos",
+    "Especialidade": "Couve-flor gratinada low carb",
 };
 menus["3afeira"] = {
     "Carne": "Frango no churrasco",
-    "Peixe": "Jaquinzinhos com arroz de tomate",
-    "Especialidade": "Bochechas",
+    "Peixe": "Lasanha de aboborinha e tofu",
+    "Especialidade": "Fritada de espinafres",
 };
 menus["4afeira"] = {
-    "Carne": "Vitela estufada",
+    "Carne": "Jardineira de vitela",
     "Peixe": "Bacalhau cozido",
     "Especialidade": "Chocos grelhados",
 };
 menus["5afeira"] = {
-    "Carne": "Esparguete à bolonhesa",
-    "Peixe": "Solha frita",
-    "Especialidade": "Cozido à portuguesa",
+    "Carne": "Strogonoff sem glúten e sem leite",
+    "Peixe": "Solha frita com arroz de tomate",
+    "Especialidade": "Kibe sem glúten",
 };
 menus["6afeira"] = {
-    "Carne": "Dobrada com feijão branco",
-    "Peixe": "Peixe cozido",
+    "Carne": "Hamburguer de quinoa",
+    "Peixe": "Peixe cozido com legumes",
     "Especialidade": "Açorda de ovas",
 };
 menus["sabado"] = {
     "Carne": "Esparguete à bolonhesa",
     "Peixe": "Pescada de fricassé",
-    "Especialidade": "Pernil no forno",
+    "Especialidade": "Macarrão de grão-de-bico com espinafres",
 };
 menus["domingo"] = {
     "Carne": "Grelhada mista",
@@ -176,7 +176,6 @@ function dispor_horas(data_la)
                 break;
             }
         }
-        console.log(form_horas);
         if(form_horas.value == data_hoje.getHours())
         {
             for(let item of form_minutos.children)
@@ -347,7 +346,7 @@ for(let item of take_delivery)
 document.getElementById("form_adicionar").addEventListener("click", () =>
 {
     //Bloquear campos
-    for(let item of document.querySelectorAll("#form_div input, #form_div select"))
+    for(let item of document.querySelectorAll("form>div input, form>div select"))
     {
         item.disabled = true;
         item.readOnly = true;
@@ -401,13 +400,24 @@ elemento_telefone.oninput = (event) =>
         event.target.setCustomValidity("");
 }
 
-function receber_encomenda(event, element)
+function receber_encomenda(element)
 {
     event.preventDefault();
+    const final_form = new FormData(element);
+    for(let i of final_form)
+        console.log("Item: " + i);
 }
 
 window.onload = () =>
 {
     dispor_pratos();
     dispor_horas(new Date(elemento_data.value));
+}
+
+function recebe_isto(element)
+{
+    const final_form = new FormData(element);
+    console.log(final_form);
+    for(let item of final_form)
+        console.log("Item: " + item);
 }

@@ -1,0 +1,9 @@
+img {
+    width: 50px;
+    height: auto;
+}
+
+.social-media {
+    display: flex;
+    justify-content: space-around;
+}

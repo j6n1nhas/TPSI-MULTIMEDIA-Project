@@ -1,0 +1,21 @@
+:root {
+    --cor-bg: #ccc;
+    --cor-site: rgb(173, 139, 240);
+  }
+  
+body {
+    border: 5px solid red;
+}
+main {
+    width: 80%;
+    border: 3px solid var(--cor-site);
+    border-radius: 15px;
+    margin: 10% auto;
+}
+
+.pics {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px;
+}

@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/logojaya.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/mobile.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/mobile.css">
     <link rel="stylesheet" type="text/css" href="css/reservas.css">
+    <link rel="stylesheet" type="text/css" href="css/header_menu.css">
     <title>JAYA · Reservas</title>
 </head>
 
@@ -20,18 +21,18 @@
                 <label for="hamburguer">&#9776;</label>
                 <input type="checkbox" id="hamburguer" hidden>        
                 <ul class="links" role="list">
-                    <li><a href="reservas.html">Reservas</a></li>
+                    <li><a href="reservas.html" style="font-weight: bold;">Reservas</a></li>
                     <li><a href="encomendas.html">Pedidos Online</a></li>
                     <li><a href="menu.html">Menu</a></li>
-                    <li><a href="#contactos">Contactos</a></li>
-                    <li><a href="#galeria">Galeria</a></li>
+                    <li><a href="contactos.html">Contactos</a></li>
+                    <li><a href="galeria.html">Galeria</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main>
-        <h2 style="text-align: center;">FORMULÁRIO DE RESERVA</h2>
+        <h1 style="text-align: center;">FORMULÁRIO DE RESERVA</h1>
 
         <!-- FORMULARIO -->
         <form id="formulario" action="" method="GET" onsubmit="receber_reserva(this)">
@@ -39,25 +40,25 @@
                 <fieldset>
                     <legend>Data pretendida</legend>
                     <label for="form_data">Dia:</label>
-                    <input type="date" min="" max="" name="data" id="form_data">
+                    <input type="date" min="" max="" name="data" id="form_data" required>
                     <label for="form_horas">Horas:</label>
-                    <input type="time" max="21:30" name="horas" id="form_horas">        
+                    <input type="time" max="21:30" name="horas" id="form_horas" required>
                 </fieldset>
                 <fieldset>
                     <legend>Responsável pela reserva</legend>
                     <label for="form_nome">Nome:</label>
-                    <input type="text" name="nome" id="form_nome">
+                    <input type="text" name="nome" id="form_nome" required>
                     <label for="form_telefone">Telefone:</label>
-                    <input type="tel" name="telefone" maxlength="9" pattern="^(?:2\d|9[1236])[0-9]{7}$" id="form_telefone">
+                    <input type="tel" name="telefone" maxlength="9" pattern="^(?:2\d|9[1236])[0-9]{7}$" id="form_telefone" required>
                     <label for="form_email">E-mail:</label>
-                    <input type="email">
+                    <input type="email" name="email">
                 </fieldset>
                 <fieldset>
                     <legend>Detalhes da reserva</legend>
                     <label for="form_pessoas">Total de pessoas:</label>
-                    <input type="number" size="3" min="1" max="30" name="pessoas" id="form_pessoas">
+                    <input type="number" size="3" min="1" max="30" name="pessoas" id="form_pessoas" required>
                     <label for="form_criancas">Total de crianças:</label>
-                    <input type="number" size="3" min="0" max="24" name="criancas" id="form_criancas">
+                    <input type="number" size="3" min="0" max="24" name="criancas" id="form_criancas" required>
                     <label for="form_tipo">Natureza do evento:</label>
                     <select name="form_tipo" id="form_tipo">Escolha:
                         <option value="aniversario">Aniversário</option>
