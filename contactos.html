@@ -9,7 +9,8 @@
     <link rel="stylesheet" type="text/css" href="css/mobile.css">
     <link rel="stylesheet" type="text/css" href="css/header_menu.css">
     <link rel="stylesheet" type="text/css" href="css/contactos.css">
-    <title>JAYA | Contactos</title>
+    <script src="https://kit.fontawesome.com/e57e83527c.js" crossorigin="anonymous"></script>
+    <title>JAYA · Contactos</title>
 </head>
 
 <body>
@@ -31,23 +32,45 @@
         </div>
     </header>
     <main>
-        <h1>CONTACTOS</h1>
-        <section class="contactos tradicionais">
-            <div id="telefone"></div>
-            <div id="fax"></div>
-            <div id="email"></div>
-        </section>
-        <section class="contactos social-media">
-            <div id="facebook">
-                <a href="http://www.facebook.com"><img src="img/facebook.svg" alt="Facebook icon"></a>
+        
+        <div class="container">
+            <h2>FORMULÁRIO DE CONTACTO</h2>
+            <form action="action_page.php">
+              <label for="fname">Nome</label>
+              <input type="text" id="fname" name="firstname" placeholder="Insira o seu nome..">
+          
+              <label for="lname">Apelido</label>
+              <input type="text" id="lname" name="lastname" placeholder="Insira o seu apelido..">
+          
+              <label for="Assunto">Assunto</label>
+              <select id="assunto" name="assunto">
+                <option value="australia">Reservas</option>
+                <option value="canada">Pedidos</option>
+                <option value="usa">Outro</option>
+              </select>
+          
+              <label for="subject">Mensagem</label>
+              <textarea id="subject" name="subject" placeholder="Escreva a sua mensagem.." style="height:200px"></textarea>
+          
+              <input type="submit" value="Submeter">
+            </form>
+            <div id="contactos" style="float:left">
+                <h1>
+                    INFORMAÇÕES
+                </h1>
+                <p><strong>Morada:</strong></p>
+                <p>Rua Almeida Garret 8</p>
+                <p>8100-535 Loulé</p>
             </div>
-            <div id="linkedin">
-                <a href="http://www.linkedin.com"><img src="img/linkedin.svg" alt="Linkedin icon"></a>
+            <div id="contactos2" style="float:left">
+                <p><strong>E-mail:</strong></p>
+                <p>jaya.loule@hotmail.com</p>
+                <p><strong>Telefone:</strong> 289829400</p>
             </div>
-            <div id="instagram">
-                <a href="http://www.instagram.com"><img src="img/instagram.svg" alt="Instgram logo"></a>
+            <div id="redes" style="float:left">
+                <p><strong>Visite também<br>as nossas redes sociais !</strong></p>
             </div>
-        </section>
+        </div>
     </main>
 </body>
 </html>

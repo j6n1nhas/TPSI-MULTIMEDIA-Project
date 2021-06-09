@@ -1,49 +1,52 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: "Futura";
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Futura";
+}
+
+@media screen and (min-width: 640px) {
+
+  #hamnav label, #hamburguer {
+    display: none;
+  }
+
+  /* HEADER */
+  header {
+    position: sticky;
+    top: 0;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.473);
+    z-index: 10;
+    background-color: #fff;
+    padding: 0 20px;
   }
   
-  @media screen and (min-width: 640px) {
+  .logo-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   
-    #hamnav label, #hamburguer {
-      display: none;
-    }
+  #logo {
+    width: 165px;
+  }
   
-    /* HEADER */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 99;
-      opacity: .8;
-      background-color: #fff;
-      padding: 0 20px;
-    }
-    .logo-row {
-        display: flex;
-        justify-content: space-between;
-      }
-    
-      #logo {
-        width: 160px;
-      }
-    
-      .links {
-        display: flex;
-        list-style: none;
-        height: 100%;
-        align-items: center;
-      }
-    
-      .links a {
-        text-decoration: none;
-        color: rgb(0, 0, 0);
-        margin: 0 20px;
-      }
-    
-      .links a:hover {
-        opacity: .5;
-      }
-    
-  }  
+  .links {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    align-items: center;
+    height: 50%;
+  }
+  
+  .links a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    margin-left: 45px;
+  }
+  
+  .links a:hover {
+    opacity: 0.5;
+  }
+  
+}  

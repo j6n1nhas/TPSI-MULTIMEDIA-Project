@@ -7,35 +7,52 @@
   
 main
 {
-    width: 70%;
-    border: 5px solid var(--cor-site);
-    border-radius: 20px;
-    margin: 50px 15%;
-}
-main img {
-    width: 200px;
-    height: 200px;
-    border-radius: 25px;
-}
+    width: 80%;
+     margin: 50px 15%;
+  }
 .pratos
 {
-    display: flex;
-    margin: 50px;
+      display: flex;
+      margin: 80px 90px 90px 120px;
+}
+  
+.pratos h3{
+      text-align: left;
+      padding-bottom: 10%;
 }
 
+h3 {
+      font-family: elsie;
+      font-size: 35px;
+}
 .pratos > .descricao
 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      padding: 20px;
 }
-
-main dt {
-    font-weight: bold;
-    margin: 15px 0;
+  
+.container {
+    width: 80%;
+    margin: 6em auto;
+    border: 5px solid rgb(231, 221, 213);
+    border-style: ridge;
+    padding: .3em 4em 4em 4em;
+    background-color: #faf4eb;
+  }
+    
+h4 {
+      
+      position: relative;
+      font-weight: 600;
+      margin: .7em 0 1em 0;
 }
-main dd {
-    color: var(--cor-site);
-    font-weight: bold;
+.pratosdia p {
+     font-size: 19px;
+     
 }
+#bolonhesa  {
+      float:right;    
+      margin: 0 75px 0 15px;
+      }

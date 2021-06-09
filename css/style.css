@@ -13,53 +13,59 @@
     background: url("../img/foodbackground.png") no-repeat center center/cover;
     height: 50vh;
     position: relative;
-    margin-top: 10px;
+    margin-top: 7px;
+    
   }
-
-
+  
+  
   /* SOBRE */
-
+  
   .container {
     width: 80%;
     margin-top: 120px;
     margin: auto 10%;
   }
-
+  
   h1 {
     font-family: Elsie;
     font-style: normal;
     font-weight: normal;
     font-size: 50px;
-    line-height: 94px;
+    line-height: 95px;
     color: #000000;
-    margin: 50px auto;
+    margin-bottom: 35px;
+    margin-top: 70px;
   }
-
+   .container h1:hover {
+     opacity: 0.6;
+     transition: 0.5s ease-in-out;
+   }
+  
   p {
     line-height: 33px;
     font-size: 17px;
   }
-
+  
   a {
     text-decoration: none;
     color: #000;
   }
-
-
+  
+  
   /* HORARIO e LOCAL */
-
+  
   .infobox {
     display: flex;
     flex-direction: column;
     position: relative;
     align-items: center;
     justify-content: center;
-    margin: 50px 0;
+    margin: 75px 0;
     width: 100%;
     height: 600px;
     text-align: center;
   }
-
+  
   .infobox::before {
       content: "";
       position: absolute;
@@ -71,18 +77,22 @@
       bottom: 0;
       right: 0;
   }
-
+  
   h2 {
-    position: relative;
-    color: rgb(53, 51, 51);
-    font-size: 42px;
-    text-align: center;
-    font-family: Elsie;
-    font-weight: normal;
-    line-height: 55px;
-    margin-top: 30px;
+     position: relative;
+     color: rgb(53, 51, 51);
+     font-size: 45px;
+     text-align: center;
+     font-family: Elsie;
+     font-weight: normal;
+     line-height: 55px;
+     margin-top: 30px;
+     transition: transform 250ms;
   }
-
+  .infobox h2:hover {
+    transform: translateY(-5px);
+  }
+  
   .infobox p {
       position: relative;
       font-family: Futura;
@@ -91,7 +101,7 @@
       padding-top: 20px;
       margin-bottom: 50px;
   }
-
+  
   h3 {
       position: initial;
       display: inline;
@@ -106,74 +116,145 @@
       color: #000000;
       border-style: solid;
       border-width: 1px;
-      border-color: var(--cor-site);
+      border-color: rgb(192, 171, 233);
       border-radius: 3px;
-      margin: 59px;
+      margin: 5px;
       padding: 10px 22px;
+      transition: transform 1s;
+      will-change: transform;
   }
-
-
-  /* FOOTER */
-
-  footer {
-    background: linear-gradient(white, var(--cor-site));
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    padding: 50px;
-    margin-top: 30px;
+  h3:hover {
+    border-width: 2px;
   }
-
-  #social-media {
-    display: flex;
-    flex-direction: row;
+  .telefone {
+    margin-top: -100px;
+    margin-left: 68%;
+    font-size: 20px;
   }
-
-  #contactos {
-    display: flex;
-    flex-direction: column;
+  .fa-phone {
+    margin-left: 13%;
+    margin-top: -100px;
+  
   }
-
-  .social-icons {
-    width: 50px;
-    height: auto;
-    margin: 10px;
+  .texto-pedidos {
+    margin-top: 65px;
+    padding-bottom: 200px;
+    line-height: 35px;
+    font-size: 17px;
   }
-
-  .container-footer {
-    width: 80%;
-    margin: 0 auto;
+  
+  .site-footer
+  {
+    background-color:#ffffff;
+    border-top: ridge;
+    border-color: rgb(232, 215, 238);
+    padding: 25px;
+    font-size:14px;
+    line: height 2px;
+    color:#272727;
   }
-
-  .informacoes {
-    display: flex;
-    justify-content: space-between;
+  
+  .site-footer .social-icons
+  {
+    text-align: right;
   }
-
-  .informacoes a {
-    display: block;
-    text-decoration: none;
-    color: #000;
+  .site-footer .social-icons a
+  {
+    width: 40px;
+    height:40px;
+    line-height:40px;
+    margin-left: 8px;
+    margin-right:2px;
+    border-radius:100%;
+    background-color:#2d2b2e
   }
-
-  .meios-comunicacao img {
-    width: 50px;
-    margin: 30px 10px;
-  }
-
-  .meios-comunicacao .btn {
-    background-color: #000;
-    padding: 10px 15px;
+  .copyright-text
+  {
+    color: #877b91;
+    margin: 5px;
     text-align: center;
-    text-transform: uppercase;
-    border: none;
-    cursor: pointer;
+    margin-bottom: -35px;
   }
-
-  .meios-comunicacao a {
-    display: inline;
-    text-decoration: none;
-    color: #313131;
-    border-radius: 5px;
+  @media (max-width:991px)
+  {
+    .site-footer [class^=col-]
+    {
+      margin: bottom 30px;
+    }
   }
-}
+  @media (max-width:767px)
+  {
+    .site-footer
+    {
+      padding-bottom:0
+    }
+    .site-footer .copyright-text,.site-footer .social-icons
+    {
+      text-align:center
+    }
+  }
+  .social-icons
+  {
+    padding-left:0;
+    margin: bottom 0px;
+    list-style: none
+  }
+  .social-icons li
+  {
+    display:inline;
+    margin: bottom 10px;
+  }
+  
+  .social-icons a{
+    background-color:#eceeef;
+    color:#e9d8f7;
+    font-size:16px;
+    display:inline-block;
+    line-height:44px;
+    width:44px;
+    height:44px;
+    text-align:center;
+    margin-right:8px;
+    border-radius:100%;
+    -webkit-transition:all .2s linear;
+    -o-transition:all .2s linear;
+    transition:all .2s linear
+  }
+  .social-icons a:active,.social-icons a:focus,.social-icons a:hover
+  {
+    color:#fff;
+    background-color:#29aafe
+  }
+  .social-icons.size-sm a
+  {
+    line-height:34px;
+    height:34px;
+    width:34px;
+    font-size:14px
+  }
+  .social-icons a.facebook:hover
+  {
+    background-color:#3b5998
+  }
+  .social-icons a.twitter:hover
+  {
+    background-color:#00aced
+  }
+  .social-icons a.instagram:hover
+  {
+    background-color:#8e00b9
+  }
+  .social-icons a.linkedin:hover
+  {
+    background-color:#007bb6
+  }
+  
+  @media (max-width:767px)
+  {
+    .social-icons li.title
+    {
+      display:block;
+      margin: right 0;
+      font-weight:600
+    }
+  }
