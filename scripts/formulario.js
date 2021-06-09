@@ -1,22 +1,15 @@
-function mySubmitFuncion(e){
+function mySubmitFunction(e){
     e.preventDefault();
 
     var lastName = document.getElementById("lname");
     var firstName = document.getElementById("fname");
     var mensagem = document.getElementById("subject");
 
-    if(lastName.innerHTML == ""){
-        alert("Preencha todos os campos!");
+    if(lastName.value == "" || firstName.value == "" || mensagem.value == ""){
+        alert("Preencha todos os campos para enviar a mensagem");
     }
-    if(firstName.innerHTML == ""){
-        alert("Preencha todos os campos!");
-    }
-    if(mensagem.innerHTML == ""){
-        alert("Preencha todos os campos");
-    }
-
     else{
-        alert ("Mensagem submetida com sucesso!");
+        alert ("Mensagem enviada com sucesso!");
     }
 
     return false;
