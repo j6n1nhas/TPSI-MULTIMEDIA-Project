@@ -1,12 +1,12 @@
 function mySubmitFunction(e){
     e.preventDefault();
 
-    var lastName = document.getElementById("lname");
     var firstName = document.getElementById("fname");
+    var contact = document.getElementById("contact");
     var mensagem = document.getElementById("subject");
 
-    if(lastName.value == "" || firstName.value == "" || mensagem.value == ""){
-        alert("Preencha todos os campos para enviar a mensagem");
+    if(firstName.value == "" || contact.value == "" || mensagem.value == ""){
+        alert("Preencha todos os campos para enviar uma mensagem!");
     }
     else{
         alert ("Mensagem enviada com sucesso!");

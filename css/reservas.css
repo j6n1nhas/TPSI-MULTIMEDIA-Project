@@ -1,15 +1,15 @@
 :root {
     --cor-bg: #ccc;
-    --cor-site: rgb(173, 139, 240);
+    
   }
 
 form *:invalid {
-    box-shadow: 1px 5px 5px red;
+    box-shadow: 2px 3px 1px rgb(226, 10, 10);
 }
 
 @media screen and (min-width: 320px) and (max-width: 640px) and (orientation: portrait) {
     form {
-        border: 5px solid #4b0d5e86;
+        border: 5px solid #cdccce;
         border-radius: 10px;
         margin: 20px 30px 50px 30px;
         padding: 10px 10px 20px 10px;
@@ -44,7 +44,9 @@ form *:invalid {
     }
 
     fieldset {
-        margin: 15px;
+        margin-left: 80px;
+        margin-right: 80px;
+        margin-top: 20px;
         padding: 10px;
     }
 
@@ -59,20 +61,21 @@ form *:invalid {
     }
 
     fieldset input, fieldset select {
-        margin-right: 30px;
+        margin-right: 12px;
     }
 
     form {
         display: flex;
         flex-direction: column;
-        border: 5px solid #4b0d5e86;
-        border-radius: 10px;
-        margin: 20px 30px 50px 30px;
+        border: 3px solid #e0cee7cb;
+        border-radius: 7px;
+        margin: 20px 95px 50px 100px;
         padding: 10px 10px 20px 10px;
     }
 
     form>button {
-        margin: 50px;
+        margin-top: 60px;
+        margin-bottom: 35px;
         font-family: Futura;
         font-style: normal;
         font-weight: 400;
@@ -81,11 +84,12 @@ form *:invalid {
         text-align: center;
         width: 282px;
         align-self: center;
+        border-radius: 7px;
     }
 
     form>button:hover {
-        background-color: var(--cor-site);
-        border-radius: 5px;
+        background-color: rgb(221, 209, 224);
+        border-radius: 10px;
         transition: background-color 2s, border-radius .1s;
     }
 

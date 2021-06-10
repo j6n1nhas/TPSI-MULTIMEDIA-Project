@@ -7,9 +7,10 @@
   
 main
 {
-    width: 80%;
-     margin: 50px 15%;
-  }
+    width: 100%;
+    margin: 50px 10px;
+}
+
 .pratos
 {
       display: flex;
@@ -34,11 +35,11 @@ h3 {
 }
   
 .container {
-    width: 80%;
-    margin: 6em auto;
+    width: 75%;
+    margin: 5em auto;
     border: 5px solid rgb(231, 221, 213);
     border-style: ridge;
-    padding: .3em 4em 4em 4em;
+    padding: .3em 4em 4em 13em;
     background-color: #faf4eb;
   }
     
