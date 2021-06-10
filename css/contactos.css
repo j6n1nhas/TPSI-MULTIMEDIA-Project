@@ -43,13 +43,18 @@ input[type=text], select, textarea {
     margin-left: 390px;
     font-size: 47px;
   }
-  #contactos2{
-    padding-top: 201px;
+  #contactos1{
+    padding-top: 220px;
     padding-bottom: 80px;
-    margin-left: -250px;
+    margin-left: -560px;
+  }
+  #contactos2{
+    padding-top: 220px;
+    padding-bottom: 80px;
+    margin-left: -230px;
   }
   
-  #redes{
-    padding-top: 235px;
+  #contactos3{
+    padding-top: 220px;
     padding-left: 100px;
   }
