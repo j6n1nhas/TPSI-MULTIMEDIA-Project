@@ -31,6 +31,7 @@ input[type=text], select, textarea {
     border-radius: 5px;
     background-color:#ece8e1;
     padding: 20px;
+    margin-top: 1%;
   }
 
   .container h2{
@@ -41,16 +42,16 @@ input[type=text], select, textarea {
   }
   h1{
     margin-left: 390px;
+    margin-top: 85px;
     font-size: 47px;
   }
   #contactos1{
     padding-top: 220px;
-    padding-bottom: 80px;
     margin-left: -560px;
+    width: 20%;
   }
   #contactos2{
     padding-top: 220px;
-    padding-bottom: 80px;
     margin-left: -230px;
   }
   
