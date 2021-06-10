@@ -10,7 +10,8 @@
 .site-footer hr
 {
   border-top-color:#bbb;
-  opacity:0.5
+  opacity:0.5;
+  
 }
 .site-footer hr.small
 {
@@ -32,6 +33,9 @@
     margin-right:2px;
     border-radius:100%;
     background-color:#2d2b2e;
+}
+.site-footer .container {
+   background-color: white;
 }
 .copyright-text
 {

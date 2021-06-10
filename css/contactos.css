@@ -8,7 +8,7 @@ input[type=text], select, textarea {
     margin-bottom: 16px; /* Bottom margin */
     font-size: 15px;
     resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
-  }
+}
   
   /* Style the submit button with a specific background color etc */
   input[type=submit] {
@@ -41,21 +41,17 @@ input[type=text], select, textarea {
     margin-bottom: 55px;
   }
   h1{
-    margin-left: 390px;
+    text-align: center;
     margin-top: 85px;
     font-size: 47px;
   }
-  #contactos1{
-    padding-top: 220px;
-    margin-left: -560px;
-    width: 20%;
-  }
-  #contactos2{
-    padding-top: 220px;
-    margin-left: -230px;
+
+  .dados {
+    float: left;
+    width: 25%;
+    margin-left: 6.5%;
+    text-align: center;
+    padding-bottom: 5%;
   }
   
-  #contactos3{
-    padding-top: 220px;
-    padding-left: 100px;
-  }
+  
