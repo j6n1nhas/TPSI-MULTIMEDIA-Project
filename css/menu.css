@@ -40,11 +40,11 @@ h3 { /* dia da semana */
       font-family: elsie;
       font-size: 38px;
       padding-top: 3.5%;
-      padding-left: 7%;
+      padding-left: 8%;
 }
 .pratosdia p {
      font-size: 19px;
-     margin-left: 15%;
+     margin-left: 17%;
      line-height: 1.8;
      margin-top: -2%;
      
@@ -81,7 +81,7 @@ h3 { /* dia da semana */
 }
 #almondegas{
       float:right;    
-      margin: -23px 230px 215px 145px;
+      margin: -23px 230px 0 145px;
       border-radius: 30px;
 }
 #arroz:hover {opacity: 0.9; transition: opacity 0.3s ease-in-out; border-radius: 45px; transition: border-radius 0.6s ease-in-out; }

@@ -11,6 +11,7 @@
 {
   border-top-color:#bbb;
   opacity:0.5;
+  margin-top: 5%;
   
   
 }
@@ -22,7 +23,7 @@
 .site-footer .social-icons
 {
     text-align: right;
-    margin: -35px 0;
+    margin: -31px 0;
     padding-bottom: 1.5%;
 }
 .site-footer .social-icons a
@@ -38,12 +39,16 @@
 .site-footer .container {
    background-color: white;
    margin-bottom: -55px;
+   border-color: white;
+   padding-bottom: 0%;
+   padding-top: 4%;
 }
 .copyright-text
 {
     margin-top: 22px;
     text-align: center;
     width: 100%;
+    font-size: 16px;
 }
 @media (max-width:991px)
 {
