@@ -29,7 +29,7 @@ input[type=text], select, textarea {
   /* Add a background color and some padding around the form */
   .container {
     border-radius: 5px;
-    background-color:#ece8e1;
+    background-color:#f1ebe2;
     padding: 20px;
     margin-top: 1%;
   }
@@ -42,7 +42,7 @@ input[type=text], select, textarea {
   }
   h1{
     text-align: center;
-    margin-top: 85px;
+    margin-top: 70px;
     font-size: 47px;
   }
 

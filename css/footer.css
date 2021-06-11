@@ -1,7 +1,7 @@
 .site-footer
 {
     background-color:#ffffff;
-    padding: 10px 0 20px;
+    padding: 5px 0 20px;
     font-size:14px;
     line-height: 24px;
     color:#272727;
@@ -12,6 +12,7 @@
   border-top-color:#bbb;
   opacity:0.5;
   
+  
 }
 .site-footer hr.small
 {
@@ -21,7 +22,7 @@
 .site-footer .social-icons
 {
     text-align: right;
-    margin: -34px 0;
+    margin: -35px 0;
     padding-bottom: 1.5%;
 }
 .site-footer .social-icons a
@@ -36,6 +37,7 @@
 }
 .site-footer .container {
    background-color: white;
+   margin-bottom: -55px;
 }
 .copyright-text
 {
