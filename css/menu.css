@@ -22,12 +22,6 @@ main
       padding-bottom:5%;
 }
 
-h3 {
-      font-family: elsie;
-      font-size: 38px;
-      padding-top: 2%;
-}
-
 .container {
     width: 75%;
     margin: 2em auto;
@@ -42,51 +36,58 @@ h4 {
       font-weight: 600;
       margin: .7em 0 1em 0;
 }
+h3 { /* dia da semana */
+      font-family: elsie;
+      font-size: 38px;
+      padding-top: 3.5%;
+      padding-left: 7%;
+}
 .pratosdia p {
      font-size: 19px;
-     margin-left: 11%;
+     margin-left: 15%;
      line-height: 1.8;
+     margin-top: -2%;
      
 }
 #bolonhesa{
       float:left;    
-      margin: -2px 215px 45px 115px;
-      border-radius: 20px;
+      margin: -2px 235px 60px 165px;
+      border-radius: 30px;
 }
 #salmao{
       float:right;    
-      margin: -20px 175px 0 20px;
-      border-radius: 20px;
+      margin: -12px 175px 0 20px;
+      border-radius: 30px;
 }
 #lasanha{
       float:right;    
-      margin: -5px 245px 0 20px;
-      border-radius: 20px;
+      margin: -20px 235px 0 20px;
+      border-radius: 30px;
 }
 #arroz{
       float:left;    
-      margin: 15px 295px 0 145px;
-      border-radius: 20px;
+      margin: 10px 225px 0 170px;
+      border-radius: 30px;
 }
 #linguini{
       float:right;    
-      margin: 15px 295px 0 145px;
-      border-radius: 20px;
+      margin: 5px 215px 0 145px;
+      border-radius: 30px;
 }
 #burger{
       float:left;    
-      margin: 15px 295px 0 145px;
-      border-radius: 20px;
+      margin: 11px 205px 40px 165px;
+      border-radius: 30px;
 }
 #almondegas{
       float:right;    
-      margin: 5px 295px 205px 145px;
-      border-radius: 20px;
+      margin: -23px 230px 215px 145px;
+      border-radius: 30px;
 }
-#arroz:hover {opacity: 0.9; transition: opacity 0.3s ease-in-out; border-radius: 35px; transition: border-radius 0.6s ease-in-out; }
-#lasanha:hover {opacity: 0.9; transition: opacity 0.3s ease-in-out; border-radius: 35px; transition: border-radius 0.6s ease-in-out;}
-#salmao:hover {opacity: 0.9; transition: opacity 0.3s ease-in-out; border-radius: 35px; transition: border-radius 0.6s ease-in-out;}
-#bolonhesa:hover {opacity: 0.9; transition: opacity 0.3s ease-in-out; border-radius: 35px; transition: border-radius 0.6s ease-in-out;}
-#linguini:hover {opacity: 0.9; transition: opacity 0.3s ease-in-out; border-radius: 35px; transition: border-radius 0.6s ease-in-out;}
-#burger:hover {opacity: 0.9; transition: opacity 0.3s ease-in-out; border-radius: 35px; transition: border-radius 0.6s ease-in-out;}
-#almondegas:hover {opacity: 0.9; transition: opacity 0.3s ease-in-out; border-radius: 35px; transition: border-radius 0.6s ease-in-out;}
+#arroz:hover {opacity: 0.9; transition: opacity 0.3s ease-in-out; border-radius: 45px; transition: border-radius 0.6s ease-in-out; }
+#lasanha:hover {opacity: 0.9; transition: opacity 0.3s ease-in-out; border-radius: 45px; transition: border-radius 0.6s ease-in-out;}
+#salmao:hover {opacity: 0.85; transition: opacity 0.3s ease-in-out; border-radius: 45px; transition: border-radius 0.6s ease-in-out;}
+#bolonhesa:hover {opacity: 0.9; transition: opacity 0.3s ease-in-out; border-radius: 45px; transition: border-radius 0.6s ease-in-out;}
+#linguini:hover {opacity: 0.9; transition: opacity 0.3s ease-in-out; border-radius: 45px; transition: border-radius 0.6s ease-in-out;}
+#burger:hover {opacity: 0.9; transition: opacity 0.3s ease-in-out; border-radius: 45px; transition: border-radius 0.6s ease-in-out;}
+#almondegas:hover {opacity: 0.9; transition: opacity 0.3s ease-in-out; border-radius: 45px; transition: border-radius 0.6s ease-in-out;}
