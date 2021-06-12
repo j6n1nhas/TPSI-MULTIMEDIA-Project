@@ -76,7 +76,7 @@ h3 { /* dia da semana */
 }
 #burger{
       float:left;    
-      margin: 11px 205px 40px 165px;
+      margin: -4px 205px 40px 175px;
       border-radius: 30px;
 }
 #almondegas{
