@@ -3,10 +3,6 @@
     
   }
 
-form *:invalid {
-    box-shadow: 2px 3px 1px rgb(226, 10, 10);
-}
-
 @media screen and (min-width: 320px) and (max-width: 640px) and (orientation: portrait) {
     form {
         border: 5px solid #cdccce;
@@ -14,7 +10,6 @@ form *:invalid {
         margin: 20px 30px 50px 30px;
         padding: 10px 10px 20px 10px;
     }
-
     fieldset {
         display: flex;
         flex-direction: column;
@@ -34,7 +29,54 @@ form *:invalid {
     form * {
         font-size: large;
     }
-
+    input[type=text], select, textarea {
+        width: 100%; 
+        padding: 12px;  
+        border: 1px solid #ccc; 
+        border-radius: 4px; 
+        box-sizing: border-box; 
+        margin-top: 6px; 
+        margin-bottom: 16px; 
+        font-size: 15px;
+        resize: vertical 
+    }
+    label{
+        width: 25%;
+        margin-left: 6.5%;
+        text-align: right;
+        padding-bottom: 5%;
+    }
+    #form_nome{
+        width: 70%;
+        padding:5px;
+        margin: 20px;
+    }
+    #form_telefone{
+        margin-bottom: 20px;
+    }
+    #form_data{
+        margin-left: 42px;
+        margin-top: 45px;
+    }
+    #form_pessoas{
+        margin-bottom: 20px;
+        margin-right: 110px;
+    }
+    #form_tipo{
+        width: 28.5%;
+        height: 29px;
+    }
+    #agendamentos{
+        width: 200px;
+        margin-left: 10px;
+    }
+    .container {
+        border-radius: 5px;
+        background-color:#f1ebe2;
+        padding: 20px;
+        margin-top: 1%;
+        margin-bottom: 3%;
+    }
     h2 {
         font-family: Elsie;
         font-size: 39px;
@@ -56,45 +98,31 @@ form *:invalid {
         justify-content: space-around;
     }
 
-    legend {
-        padding: 15px 15px;
-    }
 
     fieldset input, fieldset select {
         margin-right: 12px;
     }
 
-    form {
-        display: flex;
-        flex-direction: column;
-        border: 3px solid #e0cee7cb;
-        border-radius: 7px;
-        margin: 20px 95px 50px 100px;
-        padding: 10px 10px 20px 10px;
+    .container>button {
+        background-color:#693792;
+        color: rgb(255, 255, 255);
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 4%;
+        margin-left: 37%;
+        margin-bottom: 5%;
+        width: 25%;
     }
 
-    form>button {
-        margin-top: 60px;
-        margin-bottom: 35px;
-        font-family: Futura;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 25px;
-        padding: 8px;
-        text-align: center;
-        width: 282px;
-        align-self: center;
-        border-radius: 7px;
-    }
-
-    form>button:hover {
-        background-color: rgb(221, 209, 224);
-        border-radius: 10px;
-        transition: background-color 2s, border-radius .1s;
+    .container>button:hover {
+        opacity: 0.7;
+        border-radius: 6px;
     }
 
     main
     {
-        padding: 40px 50px 0 50px;
+        padding: 30px 50px 0 50px;
     }
 }

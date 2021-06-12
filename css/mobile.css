@@ -1,14 +1,14 @@
 /* MOBILE */
 :root {
     --cor-bg: #ccc;
-    --cor-site: rgb(173, 139, 240);
+    --cor-site: rgb(199, 179, 240);
 }
   
 @media (min-width: 320px) and (max-width: 640px) and (orientation: portrait) {
 
     #hamnav label {
         display: block;
-        color: white;
+        color: rgb(255, 255, 255);
         background: var(--cor-site);
         font-style: normal;
         font-size: 1.2em;
@@ -20,6 +20,7 @@
         z-index: 99;
         background-color: #fff;
         padding: 0 20px;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.473);
     }
     
     .logo-row {
@@ -33,7 +34,7 @@
 
     .links {
         display: none;
-        border-radius: 0 0 10px 10px;
+        border-radius: 0 0 5px 5px;
     }
 
     #hamnav input:checked ~ .links {
@@ -46,7 +47,7 @@
         display: block;
         width: 100%;
         border-top: 1px solid black;
-        text-align: right;
+        text-align: center;
     }
 
     @keyframes show_menu {
@@ -59,7 +60,7 @@
         to {
             background-color: var(--cor-site);
             font-size: 100%;
-            padding: 0 20px;
+            padding: 5px 20px;
             opacity: 1;
         }
     }
