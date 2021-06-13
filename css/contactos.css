@@ -40,11 +40,14 @@ input[type=text], select, textarea {
     margin-top: 60px;
     margin-bottom: 55px;
   }
-  h1{
+  h1 {
     text-align: center;
+    text-decoration: underline ;
+    text-decoration-color: rgb(255, 255, 255);
     margin-top: 70px;
-    font-size: 47px;
+    font-size: 48px;
   }
+  
 
   .dados {
     float: left;
@@ -52,5 +55,12 @@ input[type=text], select, textarea {
     margin-left: 6.5%;
     text-align: center;
     padding-bottom: 5%;
+  }
+  .redes{
+    transition: transform 250ms;
+  }
+  .redes:hover{
+    transform: translateY(-4px);
+    color: rgb(83, 34, 133);
   }
   
