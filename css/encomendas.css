@@ -6,21 +6,19 @@
     --cor-button: #693792;
 }
 
-form *:invalid {
-    box-shadow: 2px 3px 1px rgb(226, 10, 10);
-}
-
 form button {
     background-color: var(--cor-button);
     color: rgb(255, 255, 255);
-    padding: 12px 20px;
+    padding: 13px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    margin: 2% 30% 4% 30%;
+    
 }
 
 form button:hover {
-    opacity: 0.7;
+    opacity: 0.8;
     border-radius: 6px;
 }
 
@@ -35,13 +33,13 @@ form button:hover {
     }
 
     form {
-        border: 3px solid var(--cor-site);
         border-radius: 10px;
         margin: 10px;
         padding: 10px;
     }
 
     fieldset {
+        border: 0 none;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -76,29 +74,34 @@ legend {
     form {
         border-radius: 5px;
         background-color:#f1ebe2;
-        padding: 50px;
+        padding: 20px 50px;
         width: 75%;
         margin: 1% auto 10% auto;
         display: flex;
         flex-direction: column;
-        border: 3px solid var(--cor-site);
+    }
+    legend {
+        font-size: 18px;
     }
 
     form * {
         padding: 5px;
+        font-size: 17px;
     }
 
     fieldset {
+        border: 0 none;
         display: flex;
         flex-flow: row;
         align-items: center;
         justify-content: space-around;
-        margin: 50px;
-        padding: 20px;
+        margin: 20px;
+        padding: 10px;
     }
 
     label {
         text-align: right;
+        font-size: 18px;
     }
 
     #form_nome {

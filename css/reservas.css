@@ -2,7 +2,6 @@
 
 :root {
     --cor-bg: #ccc;
-    --cor-site: rgb(173, 139, 240);
     --cor-button: #693792;
 }
 
@@ -15,10 +14,13 @@ form button {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    margin-left: 17%;
+    margin-right: 12%;
+    margin-top: 5%;
 }
 
 form button:hover {
-    opacity: 0.7;
+    opacity: 0.8;
     border-radius: 6px;
 }
 
@@ -36,7 +38,7 @@ label {
       }
 
     form {
-        border: 3px solid var(--cor-site);
+        
         border-radius: 10px;
         margin: 10px;
         padding: 10px;
@@ -99,13 +101,12 @@ label {
     
     form * {
         font-size: large;
-        margin: 20px 0;
+        margin: 15px 0;
         padding: 5px;
         flex: 1 1 auto;
     }
 
     form {
-        border: 3px solid var(--cor-site);
         border-radius: 5px;
         background-color:#f1ebe2;
         padding: 5% 10%;
@@ -120,10 +121,12 @@ label {
         flex-flow: row;
         justify-content: space-between;
         align-items: baseline;
+        margin-right: 10%;
+        margin-left: 10%;
     }
 
     #form_nome {
-        width: 100%;
+        width: 78%;
     }
 
     .linha:nth-child(4)>* {

@@ -15,38 +15,57 @@
   header {
     position: sticky;
     top: 0;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.473);
     z-index: 10;
     background-color: #fff;
-    padding: 0 20px;
+    padding-left: 8px;
+    padding-right: 20px;
   }
-
+  
   .logo-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-
+  
   #logo {
     width: 160px;
   }
 
+  
   .links {
     display: flex;
+    flex-direction: row;
     list-style: none;
     align-items: center;
+    height: 50%;
   }
-
+  
   .links a {
     text-decoration: none;
     color: rgb(0, 0, 0);
-    margin: 0 20px;
-    align-self: center;
+    margin-left: 45px;
+    display: block;
+    position: relative;
+    padding: 0.2em 0;
   }
-
-  .links a:hover {
-    text-decoration-line: underline;
+  .links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.1em;
+    background-color: rgb(160, 133, 214);
+    opacity: 0;
+    transition: opacity 300ms, transform 300ms;
   }
-}
+  
+  .links a:hover::after,
+  .links a:focus::after {
+    opacity: 1;
+    transform: translate3d(0, 0.2em, 0);
+  }
 @media screen and (max-width: 640px) and (orientation: portrait) {
 
   #hamnav label {
@@ -92,6 +111,7 @@
       border-top: 1px solid black;
       text-align: right;
   }
+}
 
   @keyframes show_menu {
       from {
@@ -105,6 +125,6 @@
           font-size: 100%;
           padding: 5px 20px;
           opacity: 1;
-      }
+    }
   }
 }
