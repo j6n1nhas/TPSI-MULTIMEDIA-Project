@@ -54,7 +54,15 @@ form button:hover {
         margin-top: 10px;
     }
 
+    form>button {
+        margin: 25px 30%;
+    }
 }
+
+legend {
+    padding: 15px;
+}
+
 @media screen and (min-width: 640px) {
 
     h1 {
@@ -80,9 +88,6 @@ form button:hover {
         padding: 5px;
     }
 
-    legend {
-        padding: 15px;
-    }
     fieldset {
         display: flex;
         flex-flow: row;

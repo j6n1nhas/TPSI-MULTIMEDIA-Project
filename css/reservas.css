@@ -72,11 +72,11 @@ label {
     .linha:nth-child(4) {
         display: flex;
         flex-flow: row wrap;
-        justify-content: center;
+        justify-content: space-evenly;
     }
 
     .linha:nth-child(4)>* {
-        width: 10px;
+        width: 20%;
     }
 
     form * {
@@ -124,6 +124,10 @@ label {
 
     #form_nome {
         width: 100%;
+    }
+
+    .linha:nth-child(4)>* {
+        width: 20%;
     }
 
     main {
