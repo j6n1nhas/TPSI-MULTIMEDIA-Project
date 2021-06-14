@@ -19,39 +19,39 @@ const pratos = formulario.form_pratos;
 
 const menus = new Object();
 menus["2afeira"] = {
-    "Carne": "Lasanha de abóbora com frango",
-    "Peixe": "Dourada grelhada com legumes cozidos",
-    "Especialidade": "Couve-flor gratinada low carb",
+    "Carne": "Bifes de frango com cogumelos",
+    "Peixe": "Salmão grelhado",
+    "Especialidade": "Quiche de espinafres e queijo",
 };
 menus["3afeira"] = {
-    "Carne": "Frango no churrasco",
-    "Peixe": "Lasanha de aboborinha e tofu",
-    "Especialidade": "Fritada de espinafres",
+    "Carne": "Strogonoff de peru",
+    "Peixe": "Bacalhau com natas",
+    "Especialidade": "Bolonhesa vegetariana",
 };
 menus["4afeira"] = {
-    "Carne": "Jardineira de vitela",
-    "Peixe": "Bacalhau cozido",
-    "Especialidade": "Chocos grelhados",
+    "Carne": "Secretos de porco preto",
+    "Peixe": "Lasanha de atum",
+    "Especialidade": "Caril de grão e legumes",
 };
 menus["5afeira"] = {
-    "Carne": "Strogonoff sem glúten e sem leite",
+    "Carne": "Arroz de pato",
     "Peixe": "Solha frita com arroz de tomate",
-    "Especialidade": "Kibe sem glúten",
+    "Especialidade": "Wrap de falafel",
 };
 menus["6afeira"] = {
-    "Carne": "Hamburguer de quinoa",
-    "Peixe": "Peixe cozido com legumes",
-    "Especialidade": "Açorda de ovas",
+    "Carne": "Lasanha de courgette com frango",
+    "Peixe": "Linguini de camarão",
+    "Especialidade": "Alho francês à brás",
 };
 menus["sabado"] = {
-    "Carne": "Esparguete à bolonhesa",
+    "Carne": "Esparguete carbonara",
     "Peixe": "Pescada de fricassé",
-    "Especialidade": "Macarrão de grão-de-bico com espinafres",
+    "Especialidade": "Burguer de quinoa",
 };
 menus["domingo"] = {
-    "Carne": "Grelhada mista",
-    "Peixe": "Robalo grelhado",
-    "Especialidade": "Espetada de gambas",
+    "Carne": "Almôndegas de vitela",
+    "Peixe": "Bife de atum de cebolada",
+    "Especialidade": "Chili vegetariano",
 };
 
 //Atribuimos o valor min e max ao elemento de data

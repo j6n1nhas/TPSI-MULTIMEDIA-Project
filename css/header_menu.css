@@ -1,50 +1,108 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: "Futura";
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Futura";
+}
+
+@media screen and (min-width: 640px) {
+
+  #hamnav label, #hamburguer {
+    display: none;
   }
-  
-  @media screen and (min-width: 640px) {
-  
-    #hamnav label, #hamburguer {
-      display: none;
-    }
-  
-    /* HEADER */
-    header {
+
+  /* HEADER */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #fff;
+    padding: 0 20px;
+  }
+
+  .logo-row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #logo {
+    width: 160px;
+  }
+
+  .links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+  }
+
+  .links a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    margin: 0 20px;
+    align-self: center;
+  }
+  .links a:hover {
+    text-decoration-line: underline;
+  }
+}
+@media screen and (max-width: 640px) and (orientation: portrait) {
+
+  #hamnav label {
+      display: block;
+      color: rgb(255, 255, 255);
+      background: var(--cor-site);
+      font-style: normal;
+      font-size: 1.2em;
+      padding: 10px;
+  }
+
+  header {
       position: sticky;
       top: 0;
       z-index: 99;
-      opacity: .8;
       background-color: #fff;
       padding: 0 20px;
-    }
-
-    .logo-row {
-        display: flex;
-        justify-content: space-between;
-      }
-    
-      #logo {
-        width: 160px;
-      }
-    
-      .links {
-        display: flex;
-        list-style: none;
-        height: 100%;
-        align-items: center;
-      }
-    
-      .links a {
-        text-decoration: none;
-        color: rgb(0, 0, 0);
-        margin: 0 20px;
-      }
-    
-      .links a:hover {
-        opacity: .5;
-      }
-    
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.473);
   }
+  
+  .logo-row {
+  display: flex;
+  justify-content: space-between;
+  }
+
+  #logo {
+  width: 160px;
+  }
+
+  .links {
+      display: none;
+      border-radius: 0 0 5px 5px;
+  }
+
+  #hamnav input:checked ~ .links {
+      display: block;
+      animation: show_menu 1s forwards;
+  }
+
+  .links li {
+      display: block;
+      width: 100%;
+      border-top: 1px solid black;
+      text-align: right;
+  }
+
+  @keyframes show_menu {
+      from {
+          background-color: white;
+          font-size: 0px;
+          padding: 0;
+          opacity: 0;
+      }
+      to {
+          background-color: var(--cor-site);
+          font-size: 100%;
+          padding: 5px 20px;
+          opacity: 1;
+      }
+  }
+}

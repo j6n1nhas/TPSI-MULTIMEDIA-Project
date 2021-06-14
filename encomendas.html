@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/logojaya.png" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/mobile.css">
     <link rel="stylesheet" type="text/css" href="css/encomendas.css">
     <link rel="stylesheet" type="text/css" href="css/header_menu.css">
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
+    <script src="https://kit.fontawesome.com/e57e83527c.js" crossorigin="anonymous"></script>
     <title>JAYA | Pedidos Online</title>
 </head>
 <body>
@@ -19,7 +19,7 @@
             <nav id="hamnav">
                 <label for="hamburguer">&#9776;</label>
                 <input type="checkbox" id="hamburguer" hidden>        
-                <ul class="links" role="list">
+                <ul class="links">
                     <li><a href="reservas.html">Reservas</a></li>
                     <li><a href="encomendas.html" style="font-weight: bold;">Pedidos Online</a></li>
                     <li><a href="menu.html">Menu</a></li>
@@ -30,14 +30,14 @@
         </div>
     </header>
     <main>
-        <h1 style="text-align: center;">FORMULÁRIO DE ENCOMENDA</h1>
-        <form name="formulario" action="server.php" enctype="multipart/form-data" method="POST" netlify onsubmit="receber_encomenda(this)">
+        <h1 style="text-align: center; margin-top: 2%;">FORMULÁRIO DE ENCOMENDA</h1>
+        <form name="formulario" enctype="multipart/form-data" method="GET" onsubmit="receber_encomenda(this)">
             <!--<div>-->
-            <fieldset form="formulario" name="quando_como">
-                <legend>Para quando?</legend>
+            <fieldset name="quando_como" id="quando_como">
+                <legend>Para quando e como?</legend>
                 <label for="form_data">Dia:</label>
                 <!-- Dia só pode ser superior ao atual -->
-                <input type="date" min="" max="" name="data" id="form_data" value="data_hoje">
+                <input type="date" name="data" id="form_data">
                 <label for="form_horas">Horas:</label>
                 <!-- Horas disponíveis-->
                 <select name="horas" id="form_horas">
@@ -67,17 +67,17 @@
                 <label for="form_delivery">Home delivery</label>
                 <input type="radio" name="take_delivery" id="form_delivery" value="delivery">
             </fieldset>
-            <fieldset form="formulario" name="dados_entrega">
+            <fieldset name="dados_entrega" id="dados_entrega">
                 <legend>Informações de contacto</legend>
                 <label for="form_nome">Nome:</label>
-                <input type="text" size="15" name="nome" id="form_nome" required>
+                <input type="text" name="nome" id="form_nome" required>
                 <label for="form_telefone">Telefone:</label>
-                <input type="tel" name="telefone" maxlength="9" size="5" pattern="^(?:2\d|9[1236])[0-9]{7}$" id="form_telefone" required>
+                <input type="tel" name="telefone" maxlength="9" pattern="^(?:2\d|9[1236])[0-9]{7}$" id="form_telefone" required>
                 <label for="form_morada" hidden>Morada:</label>
-                <input type="text" name="morada" size="25" id="form_morada" required hidden disabled>
+                <input type="text" name="morada" id="form_morada" required hidden disabled>
             </fieldset>
             <!--</div>-->
-            <fieldset id="lista" form="formulario" name="pedidos">
+            <fieldset id="lista" name="pedidos">
                 <legend>O seu pedido</legend>
                 <div>
                     <select name="pratos" id="form_pratos" aria-label="Escolher pratos">
@@ -95,15 +95,21 @@
                     <tbody></tbody>
                 </table>
             </fieldset>
-            <textarea name="lista_pedidos" id="" cols="30" rows="10" hidden></textarea>
             <button type="submit">Encomendar agora</button>
         </form>
-        <form action="" name="expform" onclick="recebe_isto(this)">
-            <input type="text" name="nome">
-            <input type="text" name="apelido">
-            <input type="submit" value="Enviar">
-        </form>
     </main>
-    <script type="text/Javascript" src="scripts/encomendas.js"></script>
+    <footer class="site-footer">
+        <div class="container">
+            <hr class="small">
+            <p class="copyright-text">JAYA © 2021 · Todos os direitos reservados</p>
+            <ul class="social-icons">
+                <li><a class="facebook" href="https://www.facebook.com"><i class="fa fa-facebook"></i></a></li>
+                <li><a class="twitter" href="https://www.twitter.com"><i class="fa fa-twitter"></i></a></li>
+                <li><a class="instagram" href="https://www.instagram.com"><i class="fa fa-instagram"></i></a></li>
+                <li><a class="linkedin" href="https://www.linkedin.com"><i class="fa fa-linkedin"></i></a></li>   
+            </ul>
+        </div>
+    </footer>
+    <script src="scripts/encomendas.js"></script>
 </body>
 </html>

@@ -1,27 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Elsie&display=swap');
+
 :root {
     --cor-bg: #ccc;
     --cor-site: rgb(173, 139, 240);
-  }
-
-form *:invalid {
-    box-shadow: 1px 5px 5px red;
+    --cor-button: #693792;
 }
 
-@media screen and (min-width: 320px) and (max-width: 640px) and (orientation: portrait) {
-    form {
-        border: 5px solid #4b0d5e86;
-        border-radius: 10px;
-        margin: 20px 30px 50px 30px;
-        padding: 10px 10px 20px 10px;
-    }
+/* ELEMENTOS COMUNS */
 
-    fieldset {
+form button {
+    background-color: var(--cor-button);
+    color: rgb(255, 255, 255);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    opacity: 0.7;
+    border-radius: 6px;
+}
+
+label {
+    margin: 0;
+    text-align: center;
+}
+
+
+
+@media screen and (min-width: 320px) and (max-width: 640px) and (orientation: portrait) {
+
+    h1 {
+        font-family: Elsie;
+      }
+
+    form {
+        border: 3px solid var(--cor-site);
+        border-radius: 10px;
+        margin: 10px;
+        padding: 10px;
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
+    }
+
+    .linha {
+        display: flex;
+        flex-direction: column;
         align-items: center;
-        margin: 20px 0;
-        padding: 10px 0;
+    }
+
+    .linha:nth-child(1) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .linha:nth-child(2) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .linha:nth-child(2)>input {
+        width: 85%;
+    }
+    .linha:nth-child(3)>* {
+        width: 60%;
+    }
+
+    .linha:nth-child(4) {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+    }
+
+    .linha:nth-child(4)>* {
+        width: 20%;
     }
 
     form * {
@@ -31,66 +86,47 @@ form *:invalid {
 
 @media screen and (min-width: 640px) {
 
+    h1 {
+        font-family: Elsie;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 50px;
+        line-height: 95px;
+        color: #000000;
+        margin-bottom: 35px;
+        margin-top: 70px;
+      }
+    
     form * {
         font-size: large;
-    }
-
-    h2 {
-        font-family: Elsie;
-        font-size: 39px;
-        font-style: normal;
-        margin-top: 20px;
-        margin-bottom: 25px;
-    }
-
-    fieldset {
-        margin: 15px;
-        padding: 10px;
-    }
-
-    #lista {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-    }
-
-    legend {
-        padding: 15px 15px;
-    }
-
-    fieldset input, fieldset select {
-        margin-right: 30px;
+        margin: 20px 0;
+        padding: 5px;
+        flex: 1 1 auto;
     }
 
     form {
-        display: flex;
-        flex-direction: column;
-        border: 5px solid #4b0d5e86;
-        border-radius: 10px;
-        margin: 20px 30px 50px 30px;
-        padding: 10px 10px 20px 10px;
-    }
-
-    form>button {
-        margin: 50px;
-        font-family: Futura;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 25px;
-        padding: 8px;
-        text-align: center;
-        width: 282px;
-        align-self: center;
-    }
-
-    form>button:hover {
-        background-color: var(--cor-site);
+        border: 3px solid var(--cor-site);
         border-radius: 5px;
-        transition: background-color 2s, border-radius .1s;
+        background-color:#f1ebe2;
+        padding: 5% 10%;
+        display: flex;
+        flex-flow: column nowrap;
+        width: 75%;
+        margin: 1% auto 10% auto;
     }
 
-    main
-    {
-        padding: 40px 50px 0 50px;
+    .linha {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+
+    #form_nome {
+        width: 100%;
+    }
+
+    main {
+        padding: 30px 50px 0 50px;
     }
 }

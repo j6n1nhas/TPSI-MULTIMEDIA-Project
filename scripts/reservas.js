@@ -21,7 +21,6 @@ function data_em_string(data)
 }
 
 
-
 //VALIDAÇÃO DO FORMULÁRIO
 
 const elemento_numero_pessoas = document.getElementById("formulario").querySelectorAll('input[type="number"]');
@@ -85,32 +84,14 @@ function dispor_horas()
 
 function receber_reserva(element)
 {
-    event.preventDefault();
-    const elemento_agenda = document.getElementById("agendamentos");
-    const elemento_lista_agenda = document.getElementById("lista_agendamentos");
-    let opcao = document.createElement("option");
-    opcao.name = "agenda";
-    opcao.value = elemento_agenda.childElementCount+1;
-    opcao.text = "Agendamento " + opcao.value;
-    elemento_agenda.appendChild(opcao);
-    elemento_agenda.style = "box-shadow: 0 0 3px 1px red;";
-    setTimeout(() =>
-    {
-        elemento_agenda.style = "";
-    }, 1000);
-    const labels = document.getElementById("formulario").querySelectorAll("label");
-    const inputs = document.getElementById("formulario").querySelectorAll("input, select");
-    for(let index=0; index<labels.length; index++)
-    {
-        const dt = document.createElement("dt");
-        const dd = document.createElement("dd");
-        dt.textContent = labels[index].textContent;
-        dd.textContent = inputs[index].value;
-        elemento_lista_agenda.appendChild(dt);
-        elemento_lista_agenda.appendChild(dd);
-    }
+    let texto = `Recebido agendamento:\n\nNome: ${form_nome.value}\n
+    Telefone: ${form_telefone.value}\nE-mail: ${form_email.value}\n
+    ${form_pessoas.value} pessoas no total e ${form_criancas.value} crianças\n
+    O tipo de evento é ${form_tipo.value} e está agendado para ${form_data.value}
+     às ${form_horas.value}.`;
+    alert(texto);
+    element.submit();
 }
-
 
 window.onload = () =>
 {

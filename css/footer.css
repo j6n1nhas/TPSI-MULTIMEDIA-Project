@@ -1,0 +1,62 @@
+:root {
+    --cor-bg: #ccc;
+    --cor-site: rgb(199, 179, 240);
+}
+
+/* DEFINIÇÃO DAS CORES QUANDO SE PASSA COM O RATO SOBRE OS ELEMENTOS DAS REDES SOCIAIS */
+.social-icons a.facebook:hover {
+    background-color:#3b5998
+}
+.social-icons a.twitter:hover {
+    background-color:#00aced
+}
+.social-icons a.instagram:hover {
+    background-color:#ff10af
+}
+.social-icons a.linkedin:hover {
+    background-color:#007bb6
+}
+
+.site-footer {
+    background-color:#ffffff;
+    font-size:14px;
+    color:#272727;
+    border-top: ridge;
+    border-color: rgb(232, 215, 238);
+    padding: 25px;
+    color:#272727;
+}
+
+.social-icons li {
+    display: inline-block;
+    margin-bottom: 4px;
+}
+
+.site-footer hr {
+    color: var(--cor-site);
+    opacity: 0.5;
+    margin-top: 5%;
+}
+
+.site-footer .social-icons a {
+    color: #e9d8f7;
+    font-size: 16px;
+    display: inline-block;
+    line-height: 44px;
+    width: 44px;
+    height: 44px;
+    text-align: center;
+    margin-right: 8px;
+    border-radius: 100%;
+    -webkit-transition: all .2s linear;
+    -o-transition: all .2s linear;
+    transition: all .2s linear;
+    background-color:#2d2b2e;
+}
+
+.copyright-text {
+    margin-top: 24px;
+    text-align: center;
+    width: 100%;
+    font-size: 16px;
+}

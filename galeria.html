@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/logojaya.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/mobile.css">
-    <link rel="stylesheet" href="css/header_menu.css">
-    <link rel="stylesheet" href="css/galeria.css">
-    <title>JAYA | Galeria</title>
+    <link rel="stylesheet" type="text/css" href="css/header_menu.css">
+    <link rel="stylesheet" type="text/css" href="css/galeria.css">
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
+    <script src="https://kit.fontawesome.com/e57e83527c.js" crossorigin="anonymous"></script>
+    <title>JAYA · Galeria</title>
 </head>
 
 <body>
@@ -20,7 +20,7 @@
             <nav id="hamnav">
                 <label for="hamburguer">&#9776;</label>
                 <input type="checkbox" id="hamburguer" hidden>        
-                <ul class="links" role="list">
+                <ul class="links">
                     <li><a href="reservas.html">Reservas</a></li>
                     <li><a href="encomendas.html">Pedidos Online</a></li>
                     <li><a href="menu.html">Menu</a></li>
@@ -31,36 +31,69 @@
         </div>
     </header>
     <main>
-        <h1 style="text-align: center;">O nosso espaço</h1>
-        <section class="pics outside">
-            <div class="description">
-                <h2>A arquitetura e o design pitoresco</h2>
-                <p>A arquitetura do nosso espaço é fácilmente identificável e o design pitoresco que escolhemos é descontraído e acolhedor; lembra a praia, os dias quentes e os encontros com amigos e família.</p>
+        <h1 style="text-align: center; margin-top: 2%;">O NOSSO ESPAÇO</h1>
+        <div class="slideshow-container">
+
+            <!-- Full-width images with number and caption text -->
+            <div class="mySlides fade">
+              <div class="numbertext">1 / 5</div>
+              <img src="img/espaco/foto1.jpg" alt="Espaço exterior" style="width:100%">
+              <div class="text">ESPAÇO EXTERIOR</div>
             </div>
-            <div class="outside">
-                <img src="img/espaco/exterior.jpg" alt="Restaurante exterior">
+          
+            <div class="mySlides fade">
+              <div class="numbertext">2 / 5</div>
+              <img src="img/espaco/foto2.jpg" alt="Espaço interior" style="width:100%">
+              <div class="text">INTERIOR</div>
             </div>
-        </section>
-        <section class="pics inside">
-            <div class="inside1">
-                <div>
-                    <img src="img/espaco/interior.jpg" alt="Restaurante interior">
-                </div>
-                <div class="description">
-                    <h2>Espaço amplo para confraternização</h2>
-                    <p>Dispomos de bastantes mesas, confortáveis, com diferentes configurações; ideal para juntar a família ou os amigos.</p>
-                </div>
+          
+            <div class="mySlides fade">
+              <div class="numbertext">3 / 5</div>
+              <img src="img/espaco/foto3.jpg" alt="Espaço interior" style="width:100%">
+              <div class="text">INTERIOR</div>
             </div>
-            <div class="inside2">
-                <div>
-                    <img src="img/espaco/lunch-for-2.jpg" alt="Restaurante interior">
-                </div>
-                <div class="description">
-                    <h2>Mesas privativas e acolhedoras</h2>
-                    <p>Se a escolha é por uma refeição a dois, romântico com partilha de sentimentos à mesa, também aqui pode encontrar a privacidade necessária para disfrutar de momentos únicos.</p>
-                </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">4 / 5</div>
+                <img src="img/espaco/foto4.jpg" alt="A nossa comida" style="width:100%">
+                <div class="text">A NOSSA COMIDA</div>
             </div>
-        </section>
+
+            <div class="mySlides fade">
+                <div class="numbertext">5 / 5</div>
+                <img src="img/espaco/foto5.jpg" alt="O nosso café" style="width:100%">
+                <div class="text">CAFÉ PELO NOSSO BARISTA</div>
+            </div>
+          
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          </div>
+          <br>
+          
+          <!-- The dots/circles -->
+          <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span> 
+            <span class="dot" onclick="currentSlide(4)"></span> 
+            <span class="dot" onclick="currentSlide(5)"></span> 
+          </div>
     </main>
+    <footer class="site-footer">
+      <div class="container">
+          <div class="row">
+                  <hr>
+                  <p class="copyright-text">JAYA © 2021 · Todos os direitos reservados</p>
+                  <ul class="social-icons">
+                      <li><a class="facebook" href="https://www.facebook.com"><i class="fa fa-facebook"></i></a></li>
+                      <li><a class="twitter" href="https://www.twitter.com"><i class="fa fa-twitter"></i></a></li>
+                      <li><a class="instagram" href="https://www.instagram.com"><i class="fa fa-instagram"></i></a></li>
+                      <li><a class="linkedin" href="https://www.linkedin.com"><i class="fa fa-linkedin"></i></a></li>   
+                  </ul>
+          </div>
+      </div>
+</footer>
+    <script src="scripts/slides.js"></script>
 </body>
 </html>

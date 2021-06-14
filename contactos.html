@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/logojaya.png" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/mobile.css">
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
     <link rel="stylesheet" type="text/css" href="css/header_menu.css">
     <link rel="stylesheet" type="text/css" href="css/contactos.css">
-    <title>JAYA | Contactos</title>
+    <script src="https://kit.fontawesome.com/e57e83527c.js" crossorigin="anonymous"></script>
+
+    <title>JAYA · Contactos</title>
 </head>
 
 <body>
@@ -20,7 +21,7 @@
             <nav id="hamnav">
                 <label for="hamburguer">&#9776;</label>
                 <input type="checkbox" id="hamburguer" hidden>        
-                <ul class="links" role="list">
+                <ul class="links">
                     <li><a href="reservas.html">Reservas</a></li>
                     <li><a href="encomendas.html">Pedidos Online</a></li>
                     <li><a href="menu.html">Menu</a></li>
@@ -31,23 +32,63 @@
         </div>
     </header>
     <main>
-        <h1>CONTACTOS</h1>
-        <section class="contactos tradicionais">
-            <div id="telefone"></div>
-            <div id="fax"></div>
-            <div id="email"></div>
-        </section>
-        <section class="contactos social-media">
-            <div id="facebook">
-                <a href="http://www.facebook.com"><img src="img/facebook.svg" alt="Facebook icon"></a>
+        <h1>FORMULÁRIO DE CONTACTO</h1>
+        <form>
+            <label for="nome">Nome</label>
+            <input type="text" style="font-size: 15px" id="nome" name="nome" placeholder="Insira o seu nome..">
+            <label for="contacto">Contacto</label>
+            <input type="text" style="font-size: 15px" id="contacto" name="contacto" placeholder="Insira o seu contacto (e-mail/telefone)..">
+            <label for="assunto">Assunto</label>
+            <select name="assunto" id="assunto">
+                <option value="reserva">Reservas</option>
+                <option value="pedidos">Pedidos</option>
+                <option value="outro">Outras informações</option>
+            </select>
+            <label for="mensagem">Mensagem</label>
+            <textarea style="font-size: 15px; height:200px;" id="mensagem" name="assunto" placeholder="Escreva aqui a sua mensagem.."></textarea>
+            <input type="submit" style="font-size: 15px" value="Enviar">
+        </form>
+        <h2 style="margin-bottom: 4%;">INFORMAÇÕES</h2>
+        <div class="informacoes">
+            <div class="dados">
+                <strong>MORADA</strong>
+                <p>Rua Almeida Garret 8</p>
+                <p>8100-535 Loulé</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
             </div>
-            <div id="linkedin">
-                <a href="http://www.linkedin.com"><img src="img/linkedin.svg" alt="Linkedin icon"></a>
+            <div class="dados">
+                <strong>TELEFONE</strong>
+                <p>289829400</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p class="redes" style="font-size: 20px; width: 100%;">VISITE AS NOSSAS REDES SOCIAIS !</p>
             </div>
-            <div id="instagram">
-                <a href="http://www.instagram.com"><img src="img/instagram.svg" alt="Instgram logo"></a>
+            <div class="dados">
+                <strong>E-MAIL</strong>
+                <p>geral@jaya.pt</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
             </div>
-        </section>
+        </div>
     </main>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <hr>
+                <p class="copyright-text">JAYA © 2021 · Todos os direitos reservados</p>
+                <ul class="social-icons">
+                    <li><a class="facebook" href="https://www.facebook.com"><i class="fa fa-facebook"></i></a></li>
+                    <li><a class="twitter" href="https://www.twitter.com"><i class="fa fa-twitter"></i></a></li>
+                    <li><a class="instagram" href="https://www.instagram.com"><i class="fa fa-instagram"></i></a></li>
+                    <li><a class="linkedin" href="https://www.linkedin.com"><i class="fa fa-linkedin"></i></a></li>   
+                </ul>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
