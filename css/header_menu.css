@@ -72,61 +72,61 @@
 @media screen and (max-width: 640px) {
 
   #hamnav label {
-      display: block;
-      color: rgb(255, 255, 255);
-      background: var(--cor-site);
-      font-style: normal;
-      font-size: 1.2em;
-      padding: 10px;
+    display: block;
+    color: rgb(255, 255, 255);
+    background: var(--cor-site);
+    font-style: normal;
+    font-size: 1.2em;
+    padding: 10px;
   }
 
   header {
-      position: sticky;
-      top: 0;
-      z-index: 99;
-      background-color: #fff;
-      padding: 0 20px;
-      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.473);
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    background-color: #fff;
+    padding: 0 20px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.473);
   }
   
   .logo-row {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
   }
 
   #logo {
-  width: 160px;
+    width: 160px;
   }
 
   .links {
-      display: none;
-      border-radius: 0 0 5px 5px;
+    display: none;
+    border-radius: 0 0 5px 5px;
   }
 
   #hamnav input:checked ~ .links {
-      display: block;
-      animation: show_menu 1s forwards;
+    display: block;
+    animation: show_menu 1s forwards;
   }
 
   .links li {
-      display: block;
-      width: 100%;
-      border-top: 1px solid black;
-      text-align: right;
+    display: block;
+    width: 100%;
+    border-top: 1px solid black;
+    text-align: right;
   }
 }
 
 @keyframes show_menu {
-    from {
-        background-color: white;
-        font-size: 0px;
-        padding: 0;
-        opacity: 0;
-    }
-    to {
-        background-color: var(--cor-site);
-        font-size: 100%;
-        padding: 5px 20px;
-        opacity: 1;
+  from {
+      background-color: white;
+      font-size: 0px;
+      padding: 0;
+      opacity: 0;
+  }
+  to {
+      background-color: var(--cor-site);
+      font-size: 100%;
+      padding: 5px 20px;
+      opacity: 1;
   }
 }
