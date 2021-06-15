@@ -53,6 +53,7 @@ form button:hover {
         align-items: center;
         margin: 20px 0;
         padding: 10px 0;
+        border: 0 none;
     }
 
     form * {
