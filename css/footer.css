@@ -53,11 +53,11 @@
     }
 
     .site-footer .container {
-    background-color: white;
-    margin-bottom: -55px;
-    border-color: white;
-    padding-bottom: 0%;
-    padding-top: 4%;
+        background-color: white;
+        margin-bottom: -55px;
+        border-color: white;
+        padding-bottom: 0%;
+        padding-top: 4%;
     }
 
     .copyright-text {
