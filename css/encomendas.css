@@ -90,6 +90,7 @@ legend {
     }
     legend {
         font-size: 18px;
+        padding: 10px;
     }
 
     form * {
@@ -98,7 +99,6 @@ legend {
     }
 
     fieldset {
-        border: 0 none;
         display: flex;
         flex-flow: row;
         align-items: center;

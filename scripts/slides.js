@@ -10,5 +10,18 @@ function showSlides() {
   slideIndex++;
   if (slideIndex > slides.length) {slideIndex = 1} 
   slides[slideIndex-1].style.display = "block"; 
-  setTimeout(showSlides, 5000); // Change image every 5s
+  setTimeout(showSlides, 10000); // Change image every 5s
+}
+
+function currentSlide(numSlide)
+{
+  let slides = document.getElementsByClassName("mySlides");
+  let i;
+  for(i=0; i<slides.length; i++)
+  {
+    if(i==(numSlide-1))
+      slides[i].style.display = "block";
+    else
+      slides[i].style.display = "none";
+  }
 }
