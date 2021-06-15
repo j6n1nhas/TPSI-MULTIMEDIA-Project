@@ -15,7 +15,7 @@ const elemento_horas = document.getElementById("form_horas");
 const elemento_minutos = document.getElementById("form_minutos");
 
 //Elemento para escolher o prato
-const pratos = formulario.form_pratos;
+const pratos = encomendas.form_pratos;
 
 const menus = new Object();
 menus["2afeira"] = {
@@ -306,22 +306,22 @@ elemento_data.onchange = function()
     dispor_pratos();
 }
 
-const take_delivery = formulario.take_delivery;
+const take_delivery = encomendas.take_delivery;
 for(let item of take_delivery)
 {
     item.addEventListener("change", function()
     {
         if(this.value == "delivery")
         {
-            formulario.morada.disabled = false;
-            formulario.morada.hidden = false;
-            formulario.morada.previousElementSibling.hidden = false;
+            encomendas.morada.disabled = false;
+            encomendas.morada.hidden = false;
+            encomendas.morada.previousElementSibling.hidden = false;
         }
         else
         {
-            formulario.morada.disabled = true;
-            formulario.morada.hidden = true;
-            formulario.morada.previousElementSibling.hidden = true;
+            encomendas.morada.disabled = true;
+            encomendas.morada.hidden = true;
+            encomendas.morada.previousElementSibling.hidden = true;
         }
     });
 }
@@ -336,7 +336,7 @@ document.getElementById("form_adicionar").addEventListener("click", () =>
     }
     //Mostrar a tabela e acrescentar items a esta
     form_encomenda.hidden = false;
-    const pratos = formulario.form_pratos;
+    const pratos = encomendas.form_pratos;
     const encomenda = document.getElementsByTagName("tbody")[0];
     const linhas = document.querySelectorAll("tbody>tr");
     let found = false;
