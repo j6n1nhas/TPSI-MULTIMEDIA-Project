@@ -68,7 +68,8 @@
     transform: translate3d(0, 0.2em, 0);
   }
 }
-@media screen and (max-width: 640px) and (orientation: portrait) {
+
+@media screen and (max-width: 640px) {
 
   #hamnav label {
       display: block;
