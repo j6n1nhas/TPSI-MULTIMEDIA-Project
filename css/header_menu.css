@@ -5,6 +5,12 @@
   font-family: "Futura";
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Elsie&display=swap');
+:root {
+  --cor-bg: #ccc;
+  --cor-site: rgb(173, 139, 240);
+}
+
 @media screen and (min-width: 640px) {
 
   #hamnav label, #hamburguer {
@@ -32,7 +38,6 @@
     width: 160px;
   }
 
-  
   .links {
     display: flex;
     flex-direction: row;
@@ -73,7 +78,6 @@
 
   #hamnav label {
     display: block;
-    color: rgb(255, 255, 255);
     background: var(--cor-site);
     font-style: normal;
     font-size: 1.2em;
@@ -114,7 +118,6 @@
     border-top: 1px solid black;
     text-align: right;
   }
-}
 
 @keyframes show_menu {
   from {

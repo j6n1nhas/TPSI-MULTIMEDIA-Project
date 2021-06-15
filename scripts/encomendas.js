@@ -194,25 +194,8 @@ function dispor_horas(data_la)
                 }
             }
         }
-        /*
-        for(let item of form_minutos.children)
-        {
-            if(item.value <= data_hoje.getMinutes())
-            {
-                item.disable;
-                item.hidden = true;
-            }
-        }
-        for(let item of form_minutos.children)
-        {
-            if(!item.hidden)
-            {
-                item.selected = true;
-                break;
-            }
-        }
-        */
     }
+
     //Se for outro dia qualquer, então temos de nos certificar que as horas estão todas visíveis
     else
     {
@@ -398,14 +381,6 @@ elemento_telefone.oninput = (event) =>
     }
     else
         event.target.setCustomValidity("");
-}
-
-function receber_encomenda(element)
-{
-    event.preventDefault();
-    const final_form = new FormData(element);
-    for(let i of final_form)
-        console.log("Item: " + i);
 }
 
 window.onload = () =>
