@@ -2,7 +2,8 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Futura";
+  /*font-family: "Futura";*/
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Elsie&display=swap');

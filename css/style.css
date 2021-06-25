@@ -2,6 +2,8 @@
 :root {
   --cor-bg: #ccc;
   --cor-site: rgb(173, 139, 240);
+  --shadow-color: #FF9E9E;
+  --shadow-color-light: white;
 }
 
 /* ELEMENTOS COMUNS */
@@ -17,7 +19,7 @@ a {
 }
 
 
-@media screen and (min-width: 640px) {
+@media screen and (min-width: 1281px) {
   /* BANNER */
 
   .banner {
@@ -138,16 +140,174 @@ a {
   }
 }
 
-@media screen and (max-width: 640px) and (min-width: 350px) {
+@media screen and (min-width: 640px) and (max-width: 1280px) {
+
+  /* DEFINE O TAMANHO DA TAG MAIN E CORPO DA PÁGINA */
   main {
-    margin: auto 20px;
+    width: 80%;
+    margin: 5% 10%;
+  }
+
+  /* DEFINE O ESTILO DO BEM-VINDO */
+  h1 {
+    font-family: "Elsie";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 50px;
+    line-height: 95px;
+    text-align: center;
+    margin-bottom: 30px;
+    animation: neon 3s infinite;
+  }
+
+  /* ANIMAÇÃO ESTILO NEON PARA AS BOAS-VINDAS */
+  @keyframes neon {
+    0% {
+      text-shadow: -1px -1px 1px var(--cor-site), -1px 1px 1px var(--cor-site), 1px -1px 1px var(--shadow-color-light), 1px 1px 1px var(--cor-site),
+      0 0 3px var(--cor-site), 0 0 10px var(--cor-site), 0 0 20px var(--cor-site),
+      0 0 30px var(--shadow-color), 0 0 40px var(--shadow-color), 0 0 50px var(--shadow-color), 0 0 70px var(--shadow-color), 0 0 100px var(--shadow-color), 0 0 200px var(--shadow-color);
+    }
+    50% {
+      text-shadow: -1px -1px 1px var(--cor-site), -1px 1px 1px var(--cor-site), 1px -1px 1px var(--cor-site), 1px 1px 1px var(--cor-site),
+      0 0 5px var(var(--cor-site)), 0 0 15px var(var(--cor-site)), 0 0 25px var(var(--cor-site)),
+      0 0 40px var(--shadow-color), 0 0 50px var(--shadow-color), 0 0 60px var(--shadow-color), 0 0 80px var(--shadow-color), 0 0 110px var(--shadow-color), 0 0 210px var(--shadow-color);
+    }
+    100% {
+      text-shadow: -1px -1px 1px var(--cor-site), -1px 1px 1px var(--cor-site), 1px -1px 1px var(--cor-site), 1px 1px 1px var(--cor-site),
+      0 0 3px var(--cor-site), 0 0 10px var(--cor-site), 0 0 20px var(--cor-site),
+      0 0 30px var(--shadow-color), 0 0 40px var(--shadow-color), 0 0 50px var(--shadow-color), 0 0 70px var(--shadow-color), 0 0 100px var(--shadow-color), 0 0 200px var(--shadow-color);
+    }
+  }
+
+  /* DEFINE A IMAGEM NO TOPO DA PÁGINA E A SUA APRESENTAÇÃO */
+  .banner {
+    width: 100%;
+    height: 272px;
+    background: no-repeat center/100% url("../img/foodbackground.png");
+    border-radius: 15px;
+    margin-bottom: 50px;
+  }
+
+  /* FAZ OS LINKS DO TEXTO APARECEREM DA COR DO SITE QUANDO O RATO PASSA POR CIMA */
+  .container a:hover {
+    color: var(--cor-site);
+  }
+
+
+  /* HORARIO e LOCAL */
+  /* APRESENTAÇÃO DA CAIXA DE INFORMAÇÕES */
+  .infobox {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 75px 0;
+    width: 100%;
+    height: 400px;
+    text-align: center;
+  }
+
+  /* CARREGAR IMAGEM DE FUNDO DA INFOBOX */
+  .infobox::before {
+    content: "";
+    position: absolute;
+    background: no-repeat center/100% url("../img/infoback.jpg");
+    opacity: 0.3;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+
+  /* DEFINIR TÍTULOS DA INFOBOX */
+  .infobox h2 {
+    color: rgb(53, 51, 51);
+    font-size: 44px;
+    text-align: center;
+    font-family: "Elsie";
+    font-weight: normal;
+    line-height: 55px;
+  }
+
+  .infobox h2:hover {
+    transform: translateY(-5px);
+  }
+
+  /* DEFINIR OS PARÁGRAFOS DA INFOBOX */
+  .infobox p {
+    font-family: Futura;
+    font-size: 20px;
+    line-height: 40px;
+  }
+
+  h3 {
+    position: initial;
+    display: inline;
+    width: 610px;
+    height: 66px;
+    font-family: Elsie;
+    font-style: normal;
+    font-size: 47px;
+    line-height: 180px;
+    text-align: center;
+    color: #000000;
+    transition: 300ms;
+    border-bottom: 2px solid transparent;
+  }
+
+  .telefone {
+    margin-top: -100px;
+    margin-left: 84%;
+    font-size: 20px;
+    /*
+    animation-name: callme;
+    animation-iteration-count: infinite;
+    animation-duration: 3s;
+    */
+  }
+
+  .fa-phone {
+    margin-left: 1%;
+    position: relative;
+  }
+
+  h3:hover {
+    border-color: rgb(212, 165, 235);
+    animation-name: callme;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes callme {
+    0% {
+      margin-left: 1%;
+    }
+    50% {
+      margin-left: 25%;
+    }
+    100% {
+      margin-left: 1%;
+    }
+  }
+
+  .texto-pedidos {
+    margin-top: 65px;
+    padding-bottom: 100px;
+  }
+}
+
+@media screen and (max-width: 640px) and (min-width: 350px) {
+
+  main {
+    margin: 10px 20px;
   }
   
-  .img-container {
-    background-image: url("../img/infoback.jpg") no-repeat center;
+  .banner {
+    background: no-repeat center/100% url("../img/foodbackground.png");
     width: 100%;
-    height: auto;
-    border: 1px solid black;
+    height: 87px;
+    border-radius: 15px;
   }
 
   h1 {
@@ -198,7 +358,7 @@ a {
   }
 
   h3:hover {
-    border-color: rgb(212, 165, 235);
+    border-bottom: 2px solid var(--cor-site);
   }
 
   .texto-pedidos {
