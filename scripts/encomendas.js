@@ -443,9 +443,8 @@ elemento_telefone.oninput = (event) =>
         event.target.setCustomValidity("");
 }
 
-function recebe_isto(element)
+function recebe_isto()
 {
-    event.preventDefault();
     for(let item of document.querySelectorAll("form>fieldset>input"))
     {
         console.log(item);
