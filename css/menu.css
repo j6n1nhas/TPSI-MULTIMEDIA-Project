@@ -9,7 +9,7 @@
 @media screen and (min-width: 640px) {
       main {
             width: 100%;
-            margin: 50px 1px;
+            margin: 50px 10px;
       }
 
       .pratosdia {
@@ -21,15 +21,14 @@
       .pratos:nth-child(even) {
             display: flex;
             flex-flow: row wrap;
-            justify-content: space-evenly;
+            justify-content: space-between;
             border-radius: 30px;
-            padding-right: 14%;
       }
 
       .pratos:nth-child(odd) {
             display: flex;
             flex-flow: row-reverse wrap;
-            justify-content: space-evenly;
+            justify-content: space-between;
             border-radius: 30px;
       }
 

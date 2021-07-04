@@ -19,9 +19,35 @@ function currentSlide(numSlide)
   let i;
   for(i=0; i<slides.length; i++)
   {
-    if(i==(numSlide-1))
+    if(i==(numSlide - 1))
       slides[i].style.display = "block";
     else
       slides[i].style.display = "none";
+  }
+}
+
+function plusSlides(number)
+{
+  let slides = document.getElementsByClassName("mySlides");
+  if(number>0)
+  {
+    if(slideIndex==slides.length - 1)
+      slideIndex = 0;
+    else
+      slideIndex++;
+  }
+  else
+  {
+    if(slideIndex==0)
+      slideIndex = slides.length - 1;
+    else
+      slideIndex--;
+  }
+  for(let i=0; i<slides.length; i++)
+  {
+    if(i != slideIndex)
+      slides[i].style.display = "none";
+    else
+      slides[i].style.display = "block";
   }
 }

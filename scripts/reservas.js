@@ -10,9 +10,7 @@ const limite_str = data_em_string(data_limite);
 
 //Atribuimos o valor min e max ao elemento de data
 const elemento_data = document.querySelector('input[type="date"]');
-elemento_data.min = hoje_str;
-elemento_data.value = hoje_str;
-elemento_data.max = limite_str;
+const elemento_horas = document.querySelector('input[type="time"]');
 
 function data_em_string(data)
 {   //Recebe um objeto Date e devolve uma string no formato YYYY-MM-DD
@@ -20,10 +18,65 @@ function data_em_string(data)
     return retorno.substr(0, 4) + "-" + retorno.substr(4, 2) + "-" + retorno.substr(6);
 }
 
+window.onload = () => {
+    let dia_semana = data_hoje.getDay();
+    const limite_inf_horas = 9;
+    let limite_sup_horas;
+    // Definir o limite de horas consoante o dia atual
+    (dia_semana == 6 || dia_semana == 0) ? limite_sup_horas = 14 : limite_sup_horas = 19;
+    if(data_hoje.getHours() >= limite_sup_horas || (data_hoje.getHours() == limite_sup_horas - 1 && data_hoje.getMinutes() >= 30))
+    {   // Neste caso, já passou da hora de fecho do restaurante ou estamos a menos de meia hora do fecho
+        swal("Já não é possível fazer reservas para hoje", `O restaurante hoje fecha às ${limite_sup_horas}:00 e não é possível fazer marcações a partir das ${limite_sup_horas-1}:30`, 'warning', {
+            closeOnClickOutside: false,
+            closeOnEsc: false,
+            timer: 2000,
+        });
+        let d = new Date();
+        d.setDate(data_hoje.getDate()+1);
+        d = data_em_string(d);
+        elemento_data.value = d;
+        elemento_data.min = d;
+    }
+    else
+    {   // Caso contrário, ainda temos o restaurante aberto
+        elemento_data.value = data_em_string(data_hoje);
+        elemento_data.min = data_em_string(data_hoje);
+        elemento_horas.min = data_hoje.getHours() + ":" + data_hoje.getMinutes();
+        elemento_horas.max = limite_sup_horas - 1 + ":30";
+    }
+    //O limite máximo é sempre de um mês
+    elemento_data.max = limite_str;
+    elemento_horas.max = limite_sup_horas-1 + ":30";
+}
+
+// EventHandler para a modificação do elemento_data
+elemento_data.addEventListener("change", function() {
+    horas_disponiveis();
+    const data_la = new Date(this.value);
+    if(data_la.getDate() == data_hoje.getDate())
+        elemento_horas.min = data_hoje.getHours() + ":" + parseInt(data_hoje.getMinutes()) + 30;
+    else
+        elemento_horas.min = "9:00";
+    elemento_horas.value = "";
+});
+
+// EventHandler para a modificação do elemento_horas
+elemento_horas.addEventListener("change", function() {
+    horas_disponiveis();
+});
+
+// Função para definir as horas disponíveis consoante o dia da semana escolhido no elemento_data
+function horas_disponiveis()
+{
+    const dia_semana = parseInt(new Date(elemento_data.value).getDay());
+    let limite_sup_horas;
+    (dia_semana == 6 || dia_semana == 0) ? limite_sup_horas = 13 : limite_sup_horas = 18;
+    elemento_horas.max = limite_sup_horas + ":30";
+}
 
 //VALIDAÇÃO DO FORMULÁRIO
 
-const elemento_numero_pessoas = document.getElementById("formulario").querySelectorAll('input[type="number"]');
+const elemento_numero_pessoas = document.getElementById("reservas").querySelectorAll('input[type="number"]');
 for(let element of elemento_numero_pessoas)
 {
     element.oninput = () =>
@@ -69,7 +122,7 @@ function dispor_horas()
     const data_la = new Date(form_data.value);
     if(data_la.getDate() == data_hoje.getDate() && data_la.getMonth() == data_hoje.getMonth())
     {
-        let intervalo_min = new Date()
+        let intervalo_min = new Date();
         intervalo_min.setMinutes(intervalo_min.getMinutes() + 30);
         intervalo_min = (intervalo_min.getHours()*100 + intervalo_min.getMinutes()).toString();
         intervalo_min = intervalo_min.substr(0, 2) + ":" + intervalo_min.substr(2);
@@ -91,9 +144,4 @@ function receber_reserva(element)
      às ${form_horas.value}.`;
     alert(texto);
     element.submit();
-}
-
-window.onload = () =>
-{
-    dispor_horas();
 }

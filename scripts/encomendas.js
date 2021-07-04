@@ -17,6 +17,7 @@ const elemento_minutos = document.getElementById("form_minutos");
 //Elemento para escolher o prato
 const pratos = encomendas.form_pratos;
 
+// Variável objeto para guardar os pratos diários
 const menus = new Object();
 menus["2afeira"] = {
     "Carne": "Bifes de frango com cogumelos",
@@ -54,25 +55,93 @@ menus["domingo"] = {
     "Especialidade": "Chili vegetariano",
 };
 
-//Atribuimos o valor min e max ao elemento de data
-if(data_hoje.getHours() >= 19)
-{
-    //Se a hora atual passar das 19h, definimos a data mínima para o dia seguinte
-    let d = new Date();
-    d.setDate(data_hoje.getDate() + 1);
-    d = data_em_string(d);
-    elemento_data.min = d;
-    elemento_data.value = d;
+// Ao carregar página...
+window.onload = function() {
+    let dia_semana = data_hoje.getDay();
+    const limite_inf_horas = 9;
+    let limite_sup_horas;
+    // Definir o limite de horas consoante o dia atual
+    (dia_semana == 6 || dia_semana == 0) ? limite_sup_horas = 14 : limite_sup_horas = 19;
+    if(data_hoje.getHours() >= limite_sup_horas)
+    {   // Neste caso, já passou da hora de fecho do restaurante
+        swal("Restaurante fechado", `O restaurante hoje fechou às ${limite_sup_horas}:00`, 'warning', {
+            closeOnClickOutside: false,
+            closeOnEsc: false,
+            timer: 2000,
+        });
+        let d = new Date();
+        d.setDate(data_hoje.getDate()+1);
+        let ds = data_em_string(d);
+        elemento_data.value = ds;
+        elemento_data.min = ds;
+        horas_disponiveis();
+    }
+    else
+    {   // Caso contrário, ainda temos o restaurante aberto
+        elemento_data.value = data_em_string(data_hoje);
+        elemento_data.min = data_em_string(data_hoje);
+        horas_disponiveis();
+        for(let item of elemento_horas.children)
+        {   // Vamos esconder as horas que forem inferiores à hora atual ou se na hora atual já estamos a menos de 10 minutos da próxima hora
+            if(item.value < data_hoje.getHours() || (item.value == data_hoje.getHours() && data_hoje.getMinutes() >= 50))
+            {
+                item.hidden = true;
+                item.disabled = true;
+            }
+        }
+        for(let item of elemento_horas.children)
+        {   // E vamos deixar escolhida a primeira hora disponível
+            if(!item.hidden)
+            {
+                item.selected = true;
+                break;
+            }
+        }
+        for(let item of elemento_minutos.children)
+        {   // Esconder os minutos que já passaram caso estivermos a menos de 10 minutos da próxima hora
+            if(data_hoje.getMinutes() < 50)
+            {
+                if(item.value <= data_hoje.getMinutes())
+                {
+                    item.hidden = true;
+                    item.disabled = true;
+                }
+            }
+            else
+            {   // Se estivermos a menos de 10 minutos da próxima hora, a hora escolhida será a próxima e então devemos deixar visíveis todos os minutos
+                item.disabled = false;
+                item.hidden = false;
+            }
+        }
+        for(let item of elemento_minutos.children)
+        {
+            if(!item.hidden)
+            {
+                item.selected = true;
+                break;
+            }
+        }
+    }
+    dispor_pratos();
+    //O limite máximo é sempre de um mês
+    elemento_data.max = limite_str;
 }
-else
-{
-    //Caso contrário, a data mínima é a atual
-    elemento_data.min = hoje_str;
-    elemento_data.value = hoje_str;
-}
-//O limite máximo é sempre de um mês
-elemento_data.max = limite_str;
 
+// Função para definir as horas disponíveis consoante o dia da semana escolhido no elemento_data
+function horas_disponiveis()
+{
+    const dia_semana = parseInt(new Date(elemento_data.value).getDay());
+    let limite_sup_horas;
+    (dia_semana == 6 || dia_semana == 0) ? limite_sup_horas = 14 : limite_sup_horas = 19;
+    for(let item of elemento_horas.children)
+    {
+        if(item.value > limite_sup_horas)
+        {
+            item.disabled = true;
+            item.hidden = true;
+        }
+    }
+}
 
 //Função para devolver um objeto Date no formato YYYY-MM-DD em conformidade com os valores recebidos pelas tags HTML
 function data_em_string(data)
@@ -148,129 +217,45 @@ function dispor_pratos()
     }
 }
 
-function dispor_horas(data_la)
-{
-    if(data_la.getDate() == data_hoje.getDate())
-    {
-        //Se a data escolhida for o dia de hoje
-        for(let item of form_horas.children)
-        {
-            //Para todas as horas disponíveis (que são elementos HTML filhas do elemento form_horas)
-            if(item.value < data_hoje.getHours())
-            {
-                //Se a hora no elemento option em causa for menor do que a hora atual, vamos desativá-la e escondê-la
-                item.disabled = true;
-                item.hidden = true;
-            }
-            else if(item.value == data_hoje.getHours() && data_hoje.getMinutes() >= 50)
+// EventHandler para a modificação do elemento_data
+elemento_data.addEventListener('change', function() {
+    horas_disponiveis();
+    dispor_pratos();
+    if(new Date(this.value).getDate() == data_hoje.getDate())
+    {   // Se a data escolhida for o dia de hoje
+        for(let item of elemento_horas.children)
+        {   // Escondemos todas as horas que já passaram e a atual caso já estejamos a menos de 10 minutos da próxima hora
+            if(item.value < data_hoje.getHours() || (item.value == data_hoje.getHours() && data_hoje.getMinutes() >= 50))
             {
                 item.disabled = true;
                 item.hidden = true;
             }
         }
-        for(let item of form_horas.children)
-        {
+        for(let item of elemento_horas.children)
+        {   // Deixamos escolhida a primeira hora que estiver visível
             if(!item.hidden)
             {
                 item.selected = true;
                 break;
             }
         }
-        if(form_horas.value == data_hoje.getHours())
-        {
-            for(let item of form_minutos.children)
+        for(let item of elemento_minutos.children)
+        {   // Para os minutos, se estiverem abaixo dos 50 minutos, escondem-se todos os menores que os atuais
+            if(data_hoje.getMinutes() < 50)
             {
-                if(item.value < data_hoje.getMinutes())
+                if(item.value <= data_hoje.getMinutes())
                 {
                     item.disabled = true;
                     item.hidden = true;
                 }
-                else
-                {
-                    item.disabled = false;
-                    item.hidden = false;
-                    item.selected = true;
-                    break;
-                }
-            }
-        }
-    }
-
-    //Se for outro dia qualquer, então temos de nos certificar que as horas estão todas visíveis
-    else
-    {
-        //Para cada elemento filho do nosso elemento form_horas
-        for(let item of form_horas.children)
-        {
-            //Ativamo-lo e deixamo-lo visível
-            item.disabled = false;
-            item.hidden = false;
-        }
-        for(let item of form_horas.children)
-        {
-            if(!item.hidden)
-            {
-                item.selected = true;
-                break;
-            }
-        }
-        for(let item of form_minutos.children)
-        {
-            item.disabled = false;
-            item.hidden = false;
-        }
-        for(let item of form_minutos.children)
-        {
-            if(!item.hidden)
-            {
-                item.selected = true;
-                break;
-            }
-        }
-    }
-    if(data_la.getDay() == 0 || data_la.getDay() == 6)
-    {
-        for(let item of form_horas.children)
-        {
-            if(item.value > 13)
-            {
-                item.disabled = true;
-                item.hidden = true;
-            }
-        }
-    }
-    else
-    {
-        for(let item of form_horas.children)
-        {
-            item.disabled = false;
-            item.hidden = false;
-        }
-    }
-}
-
-
-//Garantir que quando escolhemos o dia de hoje e a hora atual, não apareçam minutos inferiores aos atuais
-elemento_horas.addEventListener("change", function()
-{
-    const data_la = new Date(elemento_data.value);
-    const hora_la = this.value;
-    if(data_la.getDate() == data_hoje.getDate() && data_hoje.getHours() == hora_la)
-    {
-        for(let item of form_minutos.children)
-        {
-            if(item.value < data_hoje.getMinutes())
-            {
-                item.disabled = true;
-                item.hidden = true;
             }
             else
-            {
+            {   // Caso contrário, disponibilizam-se todos porque quer dizer que a hora que está escolhida é a próxima
                 item.disabled = false;
                 item.hidden = false;
             }
         }
-        for(let item of form_minutos.children)
+        for(let item of elemento_minutos.children)
         {
             if(!item.hidden)
             {
@@ -281,12 +266,25 @@ elemento_horas.addEventListener("change", function()
     }
     else
     {
-        for(let item of form_minutos.children)
+        for(let item of elemento_horas.children)
         {
             item.disabled = false;
             item.hidden = false;
         }
-        for(let item of form_minutos.children)
+        for(let item of elemento_horas.children)
+        {
+            if(!item.hidden)
+            {
+                item.selected = true;
+                break;
+            }
+        }
+        for(let item of elemento_minutos.children)
+        {
+            item.disabled = false;
+            item.hidden = false;
+        }
+        for(let item of elemento_minutos.children)
         {
             if(!item.hidden)
             {
@@ -297,14 +295,65 @@ elemento_horas.addEventListener("change", function()
     }
 });
 
-// O que acontece quando o elemento data muda
-elemento_data.onchange = function()
-{
-    //Captamos a data que está escolhida numa variável
-    const data_la = new Date(this.value);
-    dispor_horas(data_la);
-    dispor_pratos();
-}
+// EventHandler para a modificação do elemento_horas
+elemento_horas.addEventListener('change', function() {
+    horas_disponiveis();
+    if(new Date(elemento_data.value).getDate() == data_hoje.getDate())
+    {   // Se a data escolhida for a de hoje
+        if(this.value == data_hoje.getHours())
+        {   // Se a hora escolhida for a atual, temos de esconder os minutos que já passaram
+            for(let item of elemento_minutos.children)
+            {
+                if(item.value <= data_hoje.getMinutes())
+                {
+                    item.disabled = true;
+                    item.hidden = true;
+                }
+            }
+            for(let item of elemento_minutos.children)
+            {   // E deixamos selecionado o primeiro elemento de minutos que esteja visível
+                if(!item.hidden)
+                {
+                    item.selected = true;
+                    break;
+                }
+            }
+        }
+        else
+        {   // Se a hora escolhida for qualquer outra, os minutos têm de ficar todos visíveis
+            for(let item of elemento_minutos.children)
+            {
+                item.disabled = false;
+                item.hidden = false;
+            }
+            for(let item of elemento_minutos.children)
+            {   // E deixamos escolhido o primeiro elemento visível
+                if(!item.hidden)
+                {
+                    item.selected = true;
+                    break;
+                }
+            }
+        }
+    }
+    else
+    {
+        for(let item of elemento_minutos.children)
+        {
+            item.disabled = false;
+            item.hidden = false;
+        }
+        for(let item of elemento_minutos.children)
+        {
+            if(!item.hidden)
+            {
+                item.selected = true;
+                break;
+            }
+        }
+    }
+});
+
 
 const take_delivery = encomendas.take_delivery;
 for(let item of take_delivery)
@@ -315,12 +364,14 @@ for(let item of take_delivery)
         {
             encomendas.morada.disabled = false;
             encomendas.morada.hidden = false;
+            encomendas.morada.required = true;
             encomendas.morada.previousElementSibling.hidden = false;
         }
         else
         {
             encomendas.morada.disabled = true;
             encomendas.morada.hidden = true;
+            encomendas.morada.required = false;
             encomendas.morada.previousElementSibling.hidden = true;
         }
     });
@@ -329,7 +380,7 @@ for(let item of take_delivery)
 document.getElementById("form_adicionar").addEventListener("click", () =>
 {
     //Bloquear campos
-    for(let item of document.querySelectorAll("form>div input, form>div select"))
+    for(let item of document.querySelectorAll("form>fieldset>input, form>fieldset>select"))
     {
         item.disabled = true;
         item.readOnly = true;
@@ -381,12 +432,6 @@ elemento_telefone.oninput = (event) =>
     }
     else
         event.target.setCustomValidity("");
-}
-
-window.onload = () =>
-{
-    dispor_pratos();
-    dispor_horas(new Date(elemento_data.value));
 }
 
 function recebe_isto(element)

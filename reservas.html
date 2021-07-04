@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="css/reservas.css">
     <link rel="stylesheet" type="text/css" href="css/header_menu.css">
     <link rel="stylesheet" type="text/css" href="css/footer.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://kit.fontawesome.com/e57e83527c.js" crossorigin="anonymous"></script>
     <title>JAYA · Reservas</title>
 </head>
@@ -37,7 +38,7 @@
                 <label for="form_data">Dia:</label>
                 <input type="date" name="data" id="form_data" required>
                 <label for="form_horas">Horas:</label>
-                <input type="time" max="21:30" name="horas" id="form_horas" required>
+                <input type="time" min="09:00" name="horas" id="form_horas" required>
             </div>
             <div class="linha">
                 <label for="form_nome">Nome:</label>
