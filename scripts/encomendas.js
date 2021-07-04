@@ -445,11 +445,12 @@ elemento_telefone.oninput = (event) =>
 
 function recebe_isto(element)
 {
+    event.preventDefault();
     for(let item of document.querySelectorAll("form>fieldset>input"))
     {
+        console.log(item);
         item.disabled = false;
         item.readOnly = false;
     }
     const final_form = new FormData(element);
-    return final_form;
 }
