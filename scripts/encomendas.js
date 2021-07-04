@@ -380,10 +380,19 @@ for(let item of take_delivery)
 document.getElementById("form_adicionar").addEventListener("click", () =>
 {
     //Bloquear campos
-    for(let item of document.querySelectorAll("form>fieldset>input, form>fieldset>select"))
+    for(let item of document.querySelectorAll("form>fieldset>input"))
     {
-        item.disabled = true;
+        console.log(item);
         item.readOnly = true;
+        item.disabled = true;
+    }
+    for(let item of document.querySelectorAll("form>fieldset>select"))
+    {
+        for(let i of item.children)
+        {
+            if(!i.selected)
+                i.disabled = true;
+        }
     }
     //Mostrar a tabela e acrescentar items a esta
     form_encomenda.hidden = false;
@@ -437,6 +446,11 @@ elemento_telefone.oninput = (event) =>
 function recebe_isto(element)
 {
     const final_form = new FormData(element);
+    for(let item of document.querySelectorAll("form>fieldset>input"))
+    {
+        item.disabled = false;
+        item.readOnly = false;
+    }
     console.log(final_form);
     for(let item of final_form)
         console.log("Item: " + item);
